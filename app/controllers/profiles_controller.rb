@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.all
+    @profiles = Profile.where(traveler: false)
 
     if params[:query].present?
       @profiles = @profiles.where(
