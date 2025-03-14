@@ -1,6 +1,13 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.all
+    @profiles = Profile.where(traveler: false)
+
+    if params[:query].present?
+      @profiles = @profiles.where(
+        "country ILIKE :query OR city ILIKE :query",
+        query: "%#{params[:query]}%"
+      )
+    end
   end
 
   def new
@@ -23,6 +30,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:bio, :country, :city, :traveler, :preferences, :food, :animal, :availability)
+    params.require(:profile).permit(:bio, :country, :city, :traveler, :preferences, :food, :animal, :availability, :language)
   end
 end

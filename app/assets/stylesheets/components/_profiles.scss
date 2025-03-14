@@ -1,0 +1,36 @@
+.title {
+  color: #007782;
+  text-align: center;
+}
+
+.profile-details {
+  background: #F4F4F4;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-btn { 
+  background: #007782;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.profile-btn:hover {
+  background: #005a5f;
+}
