@@ -21,14 +21,15 @@ end
 10.times do
   Profile.create(
     name: Faker::Name.name,
-    bio: "#{Faker::Name.first_name} é uma pessoa que ama viajar. Tem #{rand(18..65)} anos e adora explorar novas culturas e paisagens. Nas horas vagas, gosta de praticar esportes ao ar livre e sair com amigos para festas.",
+    bio: "I am #{Faker::Name.first_name}, a person who loves to travel. I am #{rand(18..65)} years old and enjoy exploring new cultures and landscapes. In my free time, I like to practice outdoor sports and hang out with friends at parties.",
     country: 'Brazil',
     city: 'Rio de Janeiro',
     traveler: Faker::Boolean.boolean,
     preferences: Faker::Lorem.words(number: 3).join(', '),
     food: Faker::Food.dish,
-    animal: ["gato", "cachorro", "pássaro", "hamster"].sample,
-    availability: ["disponível finais de semana", "disponível terças e quintas", "disponível todas as tardes"].sample,
+    animal: ["cat", "dog", "bird", "hamster"].sample,
+    availability: ["available on weekends", "available on Tuesdays and Thursdays", "available every afternoon"].sample,
+    language: 'English, Portuguese',
     user_id: User.all.sample.id
   )
 end
@@ -36,14 +37,15 @@ end
 10.times do
   Profile.create(
     name: Faker::Name.name,
-    bio: "#{Faker::Name.first_name} é um viajante nato e tem #{rand(18..65)} anos. Ama a natureza e sempre busca novos lugares para explorar. Nas horas livres, se dedica à leitura e relaxa em cafés.",
+    bio: "I am #{Faker::Name.first_name}, a born traveler, and I am #{rand(18..65)} years old. I love nature and always look for new places to explore. In my free time, I enjoy reading and relaxing in cafes.",
     country: 'Portugal',
-    city: 'Lisboa',
+    city: 'Lisbon',
     traveler: Faker::Boolean.boolean,
     preferences: Faker::Lorem.words(number: 3).join(', '),
     food: Faker::Food.dish,
-    animal: ["gato", "cachorro", "coelho", "pássaro"].sample,
-    availability: ["disponível finais de semana", "disponível só à noite", "disponível segundas e sextas"].sample,
+    animal: ["cat", "dog", "rabbit", "bird"].sample,
+    availability: ["available on weekends", "available only at night", "available on Mondays and Fridays"].sample,
+    language: 'English, Portuguese',
     user_id: User.all.sample.id
   )
 end
@@ -51,14 +53,15 @@ end
 10.times do
   Profile.create(
     name: Faker::Name.name,
-    bio: "#{Faker::Name.first_name} tem #{rand(18..65)} anos e ama se aventurar. Gosta de festas e de conhecer novas pessoas. Nas suas viagens, sempre procura lugares com muita agitação.",
+    bio: "I am #{Faker::Name.first_name}, #{rand(18..65)} years old, and I love adventure. I enjoy parties and meeting new people. On my travels, I always look for places with a lively atmosphere.",
     country: 'France',
     city: 'Paris',
     traveler: Faker::Boolean.boolean,
     preferences: Faker::Lorem.words(number: 3).join(', '),
     food: Faker::Food.dish,
-    animal: ["gato", "cachorro", "peixe", "cavalo"].sample,
-    availability: ["disponível finais de semana", "disponível terça e quinta-feira", "disponível todo dia de manhã"].sample,
+    animal: ["cat", "dog", "fish", "horse"].sample,
+    availability: ["available on weekends", "available on Tuesdays and Thursdays", "available every morning"].sample,
+    language: 'English, French',
     user_id: User.all.sample.id
   )
 end
@@ -66,14 +69,15 @@ end
 10.times do
   Profile.create(
     name: Faker::Name.name,
-    bio: "#{Faker::Name.first_name} tem #{rand(18..65)} anos e é apaixonado por novas experiências. Quando viaja, gosta de passar tempo em praias e explorar a gastronomia local.",
+    bio: "I am #{Faker::Name.first_name}, #{rand(18..65)} years old, and passionate about new experiences. When I travel, I enjoy spending time at the beach and exploring the local cuisine.",
     country: 'Spain',
     city: 'Barcelona',
     traveler: Faker::Boolean.boolean,
     preferences: Faker::Lorem.words(number: 3).join(', '),
     food: Faker::Food.dish,
-    animal: ["gato", "cachorro", "coelho", "hamster"].sample,
-    availability: ["disponível finais de semana", "disponível sábados", "disponível terças e quintas"].sample,
+    animal: ["cat", "dog", "rabbit", "hamster"].sample,
+    availability: ["available on weekends", "available on Saturdays", "available on Tuesdays and Thursdays"].sample,
+    language: 'English, Spanish',
     user_id: User.all.sample.id
   )
 end
@@ -81,14 +85,15 @@ end
 10.times do
   Profile.create(
     name: Faker::Name.name,
-    bio: "#{Faker::Name.first_name} tem #{rand(18..65)} anos e é um aventureiro. Quando viaja, adora explorar as montanhas e conhecer pessoas novas. Também é fã de arte e adora visitar museus.",
+    bio: "I am #{Faker::Name.first_name}, #{rand(18..65)} years old and an adventurer. When I travel, I love exploring mountains and meeting new people. I am also a fan of art and enjoy visiting museums.",
     country: 'Italy',
-    city: 'Milão',
+    city: 'Milan',
     traveler: Faker::Boolean.boolean,
-    preferences: Faker::Lorem.words(number: 3).join(', '), 
+    preferences: Faker::Lorem.words(number: 3).join(', '),
     food: Faker::Food.dish,
-    animal: ["gato", "cachorro", "pássaro", "coelho"].sample,
-    availability: ["disponível finais de semana", "disponível às segundas", "disponível todas as tardes"].sample,
+    animal: ["cat", "dog", "bird", "rabbit"].sample,
+    availability: ["available on weekends", "available on Mondays", "available every afternoon"].sample,
+    language: 'English, Italian',
     user_id: User.all.sample.id
   )
 end
