@@ -1,47 +1,54 @@
 <h1>Criar Perfil</h1>
 
-<%= form_with model: @profile, local: true do |f| %>
-  <div>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
+<div class="card-form custom-card">
+  <div class="card-body">
+    <%= form_with model: @profile, local: true, html: { class: "profile-form", multipart: true } do |f| %>
+      <div>
+        <%= f.label :name, "Name" %>
+        <%= f.text_field :name, class: 'custom-text-field' %>
+      </div>
+      <div>
+        <%= f.label :bio %>
+        <%= f.text_area :bio, class: 'custom-text-field' %>
+      </div>
+      <div>
+        <%= f.label :country %>
+        <%= f.text_field :country, class: 'custom-text-field' %>
+      </div>
+      <div>
+        <%= f.label :city %>
+        <%= f.text_field :city, class: 'custom-text-field' %>
+      </div>
+      <div class="checkbox-container">
+        <%= f.label :traveler %>
+        <%= f.check_box :traveler %>
+      </div>
+      <div>
+        <%= f.label :preferences %>
+        <%= f.text_field :preferences, class: 'custom-text-field' %>
+      </div>
+      <div>
+        <%= f.label :food %>
+        <%= f.text_field :food, class: 'custom-text-field' %>
+      </div>
+      <div>
+        <%= f.label :animal %>
+        <%= f.text_field :animal, class: 'custom-text-field' %>
+      </div>
+      <div class="checkbox-container">
+        <%= f.label :availability %>
+        <%= f.check_box :availability %>
+      </div>
+      <div>
+        <%= f.label :photo, "Imagem de Perfil" %>
+        <%= f.file_field :photo %>
+      </div>
+      <div>
+        <%= f.submit "Criar Perfil", class: "btn-principal " %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
-
-  <div>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div>
-    <%= f.label :traveler %>
-    <%= f.check_box :traveler %>
-  </div>
-
-  <div>
-    <%= f.label :preferences %>
-    <%= f.text_field :preferences %>
-  </div>
-
-  <div>
-    <%= f.label :food %>
-    <%= f.text_field :food %>
-  </div>
-
-  <div>
-    <%= f.label :animal %>
-    <%= f.text_field :animal %>
-  </div>
-
-  <div>
-    <%= f.label :availability %>
-    <%= f.check_box :availability %>
-  </div>
-
-  <div>
-    <%= f.submit "Criar Perfil" %>
-  </div>
-<% end %>
+</div>
+<footer class="footer">
+  <p>&copy; 2025 Local Buddy. Todos os direitos reservados.</p>
+</footer>
