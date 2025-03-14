@@ -1,11 +1,16 @@
 .btn-principal {
   background-color: #1369CB;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;  // Menor padding para diminuir a altura
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 150px;  // Largura fixa para o botão (ajuste conforme necessário)
+  color: white;
+  margin: 10px auto;  // Espaço ao redor para centralizar
+  display: inline-block;
+  font-size: 12px;
 
   &:hover {
     background-color: #7EB9FC;
