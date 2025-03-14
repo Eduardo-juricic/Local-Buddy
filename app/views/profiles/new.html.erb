@@ -1,54 +1,48 @@
-<h1>Criar Perfil</h1>
+<h1 class="title">Create Profile</h1>
 
 <div class="card-form custom-card">
   <div class="card-body">
-    <%= form_with model: @profile, local: true, html: { class: "profile-form", multipart: true } do |f| %>
-      <div>
-        <%= f.label :name, "Name" %>
-        <%= f.text_field :name, class: 'custom-text-field' %>
+    <%= simple_form_for @profile, html: { class: "profile-form", multipart: true } do |f| %>
+      <div class="form-input">
+        <%= f.input :name, label: "Name", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :bio, label: "Bio", as: :text, input_html: { class: 'custom-text-field' } %>
+      </div>
+    <div class="form-input">
+       <%= f.input :country, label: "Country", collection: ['Brazil', 'USA', 'France', 'Germany'], input_html: { class: 'custom-text-field' } %>
+    </div>
+      <div class="form-input">
+        <%= f.input :city, label: "City", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :language, label: "Language", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :traveler, as: :boolean, label: "Traveler", input_html: { class: 'custom-checkbox' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :preferences, label: "Preferences", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :food, label: "Food", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :animal, label: "Animal", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :availability, as: :boolean, label: "Availability", input_html: { class: 'custom-checkbox' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :photo, label: "Imagem de Perfil", as: :file %>
       </div>
       <div>
-        <%= f.label :bio %>
-        <%= f.text_area :bio, class: 'custom-text-field' %>
-      </div>
-      <div>
-        <%= f.label :country %>
-        <%= f.text_field :country, class: 'custom-text-field' %>
-      </div>
-      <div>
-        <%= f.label :city %>
-        <%= f.text_field :city, class: 'custom-text-field' %>
-      </div>
-      <div class="checkbox-container">
-        <%= f.label :traveler %>
-        <%= f.check_box :traveler %>
-      </div>
-      <div>
-        <%= f.label :preferences %>
-        <%= f.text_field :preferences, class: 'custom-text-field' %>
-      </div>
-      <div>
-        <%= f.label :food %>
-        <%= f.text_field :food, class: 'custom-text-field' %>
-      </div>
-      <div>
-        <%= f.label :animal %>
-        <%= f.text_field :animal, class: 'custom-text-field' %>
-      </div>
-      <div class="checkbox-container">
-        <%= f.label :availability %>
-        <%= f.check_box :availability %>
-      </div>
-      <div>
-        <%= f.label :photo, "Imagem de Perfil" %>
-        <%= f.file_field :photo %>
-      </div>
-      <div>
-        <%= f.submit "Criar Perfil", class: "btn-principal " %>
+        <%= f.button :submit, "Create Profile", class: "btn-principal" %>
       </div>
     <% end %>
   </div>
 </div>
+
 <footer class="footer">
   <p>&copy; 2025 Local Buddy. Todos os direitos reservados.</p>
 </footer>
