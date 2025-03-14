@@ -1,0 +1,47 @@
+<h1>Criar Perfil</h1>
+
+<%= form_with model: @profile, local: true do |f| %>
+  <div>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div>
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div>
+    <%= f.label :traveler %>
+    <%= f.check_box :traveler %>
+  </div>
+
+  <div>
+    <%= f.label :preferences %>
+    <%= f.text_field :preferences %>
+  </div>
+
+  <div>
+    <%= f.label :food %>
+    <%= f.text_field :food %>
+  </div>
+
+  <div>
+    <%= f.label :animal %>
+    <%= f.text_field :animal %>
+  </div>
+
+  <div>
+    <%= f.label :availability %>
+    <%= f.check_box :availability %>
+  </div>
+
+  <div>
+    <%= f.submit "Criar Perfil" %>
+  </div>
+<% end %>
