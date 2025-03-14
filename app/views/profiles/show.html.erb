@@ -1,12 +1,20 @@
-<h1>Detalhes do Perfil</h1>
+<h1 class="title">Profile Details</h1>
 
-<p><strong>Bio:</strong> <%= @profile.bio %></p>
-<p><strong>Country:</strong> <%= @profile.country %></p>
-<p><strong>City:</strong> <%= @profile.city %></p>
-<p><strong>Traveler:</strong> <%= @profile.traveler ? 'Yes' : 'No' %></p>
-<p><strong>Preferences:</strong> <%= @profile.preferences %></p>
-<p><strong>Food:</strong> <%= @profile.food %></p>
-<p><strong>Animal:</strong> <%= @profile.animal %></p>
-<p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
+<section class="profile-details">
+  <% if @profile.photo.attached? %>
+    <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
+  <% end %>
 
-<%= link_to 'Voltar', profiles_path %>
+  <h2><%= @profile.name %></h2>
+
+  <p><strong>Bio:</strong> <%= @profile.bio %></p>
+  <p><strong>Location:</strong> <%= @profile.city %>, <%= @profile.country %></p>
+  <p><strong>Traveler:</strong> <%= @profile.traveler ? 'Yes' : 'No' %></p>
+  <p><strong>Preferences:</strong> <%= @profile.preferences %></p>
+  <p><strong>Food:</strong> <%= @profile.food %></p>
+  <p><strong>Animal Friendly:</strong> <%= @profile.animal %></p>
+  <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
+  <p><strong>Language:</strong> <%= @profile.language %></p>
+
+  <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
+</section>
