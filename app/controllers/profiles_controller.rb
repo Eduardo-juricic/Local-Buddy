@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  skip_before_action :set_profile, only: %i[new create]
+
   def index
     @profiles = Profile.where(traveler: false)
 
@@ -11,6 +13,8 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    redirect_to root_path if current_user.profile.present?
+
     @profile = Profile.new
   end
 
@@ -30,6 +34,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:bio, :country, :city, :traveler, :preferences, :food, :animal, :availability, :language)
+    params.require(:profile).permit(:bio, :country, :city, :traveler, :preferences, :food, :name, :animal, :availability, :language)
   end
 end
