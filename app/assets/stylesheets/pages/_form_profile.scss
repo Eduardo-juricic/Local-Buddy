@@ -1,8 +1,8 @@
 .card-form {
   max-width: 320px; // Limite de largura para a tela do iPhone 6/7/8
-  width: 100%;  // Garante que o card ocupe toda a largura disponível até o máximo de 320px
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;  // Reduzido padding para um layout mais compacto
+  padding: 20px;
   background-color: $white;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -12,8 +12,8 @@
   align-items: center;
 
   .card-body {
-    width: 100%;  // A largura deve ser 100% para não ultrapassar o card-form
-    padding: 15px;  // Reduzido padding para não ocupar tanto espaço
+    width: 100%;
+    padding: 15px;
     background-color: $white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -21,10 +21,10 @@
 
   h1 {
     font-family: $headers-font;
-    font-size: 18px;  // Font menor para caber melhor na tela
+    font-size: 18px;
     color: $blue;
     text-align: center;
-    margin-bottom: 15px;  // Menos espaço embaixo para mais compactação
+    margin-bottom: 15px;
   }
 
   label {
@@ -41,8 +41,8 @@
     border-radius: 5px;
     font-size: 14px;
     font-family: $body-font;
-    width: 100%;  // Garantir que os campos ocupem toda a largura do card
-    margin-bottom: 10px;  // Espaço entre os campos
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   textarea {
@@ -54,7 +54,18 @@
     display: flex;
     justify-content: flex-start;
     gap: 8px;
+
+    input[type="checkbox"] {
+      transform: scale(0.8);
+    }
   }
+
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    transform: scale(0.8);
+  }
+
   .footer {
     width: 100%;
     background-color: $light-gray;
@@ -63,7 +74,7 @@
     text-align: center;
     font-family: $body-font;
     font-size: 14px;
-    position: relative;  // Pode ser 'relative' para não ficar fixo na tela
-    margin-top: 20px;  // Adicionando margem para separá-lo do conteúdo acima
+    position: relative;
+    margin-top: 20px;
   }
 }
