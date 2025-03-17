@@ -1,6 +1,6 @@
 <h1 class="title">Profile Details</h1>
 
-<section class="profile-details">
+<section class="profile-listing">
   <% if @profile.photo.attached? %>
     <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
   <% end %>
