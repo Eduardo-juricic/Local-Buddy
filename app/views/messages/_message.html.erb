@@ -1,5 +1,10 @@
-<div class="message <%= 'sent' if message.user == current_user %>" id="message_<%= message.id %>">
-  <strong><%= message.user.name %>:</strong>
-  <p><%= message.content %></p>
-  <small><%= message.created_at.strftime("%H:%M - %d/%m/%Y") %></small>
+<div id="message-<%= message.id %>"
+     class="message <%= message.user == user ? 'sent' : 'received' %>"
+     data-controller="message"
+     data-message-user-id-value="<%= message.user.id %>">
+  <small class="message-info">
+    <strong><%= message.user.name %></strong>
+    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+  </small>
+  <p class="message-content"><%= message.content %></p>
 </div>

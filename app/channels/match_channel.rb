@@ -1,14 +1,8 @@
 class MatchChannel < ApplicationCable::Channel
   def subscribed
-    stream_for match
+    stream_from "match_#{params[:match_id]}_messages"
   end
 
   def unsubscribed
-  end
-
-  private
-
-  def match
-    @match ||= Match.find(params[:id]) 
   end
 end

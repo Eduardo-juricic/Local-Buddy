@@ -1,12 +1,25 @@
 class MatchesController < ApplicationController
-  before_action :set_match, only: [:show]
-
   def show
+    @match = Match.find(params[:id])
+    @message = Message.new
+  end
+
+  def create
+    @user = User.find(params[:user_id])
+    @match = Match.new(match_params)
+    @match.user = current_user
+    @match.matched_user = @user
+
+    if @match.save
+      redirect_to @user
+    else
+      render "users/show"
+    end
   end
 
   private
 
-  def set_match
-    @match = Match.find(params[:id]) 
+  def match_params
+    params.require(:match).permit(:status) 
   end
 end

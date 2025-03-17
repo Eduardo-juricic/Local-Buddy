@@ -1,13 +1,19 @@
-<h1>Match: <%= @match.id %></h1>
+<%= turbo_stream_from "match_#{@match.id}_messages" %>
 
-<div id="messages">
-  <%= turbo_stream_from "match_#{@match.id}_messages" %>
-  <%= render partial: "messages/message", collection: @match.messages, as: :message %>
+<div id="messages" class="messages">
+<%= turbo_frame_tag :messages, class: 'messages' do %>
+  <% @match.messages.each do |message| %>
+    <%= render "messages/message", message: message, user: current_user %>
+  <% end %>
+<% end %>
 </div>
 
-<%= turbo_frame_tag "new_message" do %>
-  <%= simple_form_for [@match, Message.new] do |f| %>
-    <%= f.input :content, as: :text, label: "Write your message", input_html: { rows: 3, class: "form-control" } %>
-    <%= f.button :submit, "Enviar", class: "btn btn-principal" %>
-  <% end %>
+<%= simple_form_for [@match, Message.new], html: {class: "d-flex", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }} do |f| %>
+  <% other_user = current_user == @match.user ? @match.user : @match.user %>
+  <%= f.input :content,
+    label: false,
+    placeholder: "Mensagem para #{other_user.name}",
+    wrapper_html: {class: "flex-grow-1"}
+  %>
+  <%= f.submit "Enviar", class: "btn btn-primary mb-3" %>
 <% end %>
