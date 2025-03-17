@@ -77,3 +77,4 @@ end
 gem "dotenv-rails"
 gem "cloudinary"
 gem 'faker'
+gem 'sass-rails', '~> 6.0'
