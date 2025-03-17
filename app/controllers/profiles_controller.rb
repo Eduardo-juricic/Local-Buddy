@@ -31,6 +31,20 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def edit
+    @profile = current_user.profile
+    redirect_to root_path, alert: "Você não tem permissão para editar este perfil." unless @profile
+  end
+
+  def update
+    @profile = current_user.profile
+    if @profile.update(profile_params)
+      redirect_to profile_path(@profile), notice: "Perfil atualizado com sucesso!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def profile_params

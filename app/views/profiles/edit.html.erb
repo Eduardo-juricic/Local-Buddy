@@ -1,0 +1,48 @@
+<h1 class="title">Edit Profile</h1>
+
+<div class="card-form custom-card">
+  <div class="card-body">
+    <%= simple_form_for @profile, html: { class: "profile-form", multipart: true } do |f| %>
+      <div class="form-input">
+        <%= f.input :name, label: "Name", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :bio, label: "Bio", as: :text, input_html: { class: 'custom-text-field' } %>
+      </div>
+    <div class="form-input">
+       <%= f.input :country, label: "Country", collection: ['Brazil', 'Portugal', 'France', 'Italy'], input_html: { class: 'custom-text-field' } %>
+    </div>
+      <div class="form-input">
+        <%= f.input :city, label: "City", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :language, label: "Language", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :traveler, as: :boolean, label: "Traveler", input_html: { class: 'custom-checkbox' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :preferences, label: "Preferences", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :food, label: "Food", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :animal, label: "Animal", input_html: { class: 'custom-text-field' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :availability, as: :boolean, label: "Availability", input_html: { class: 'custom-checkbox' } %>
+      </div>
+      <div class="form-input">
+        <%= f.input :photo, label: "Imagem de Perfil", as: :file %>
+      </div>
+      <div>
+        <%= f.button :submit, "Edit Profile", class: "btn-principal" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 Local Buddy. Todos os direitos reservados.</p>
+</footer>
