@@ -1,0 +1,11 @@
+<h1>My Matches</h1>
+
+<% if @matches.present? %>
+  <% @matches.each do |match| %>
+    <div>
+      <h3><%= match.profile.name %></h3>
+    </div>
+  <% end %>
+<% else %>
+  <p>No matches found.</p>
+<% end %>

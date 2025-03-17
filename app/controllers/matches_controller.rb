@@ -6,20 +6,21 @@ class MatchesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @match = Match.new(match_params)
-    @match.user = current_user
-    @match.matched_user = @user
 
-    if @match.save
-      redirect_to @user
-    else
-      render "users/show"
+    @match = Match.find_by(user: current_user, matched_user: @user) ||
+             Match.find_by(user: @user, matched_user: current_user)
+
+    unless @match
+      @match = Match.new(user: current_user, matched_user: @user, status: "pending")
+      @match.save
     end
+
+    redirect_to match_path(@match)
   end
 
   private
 
   def match_params
-    params.require(:match).permit(:status) 
+    params.require(:match).permit(:status)
   end
 end
