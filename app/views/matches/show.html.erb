@@ -1,0 +1,13 @@
+<h1>Match: <%= @match.id %></h1>
+
+<div id="messages">
+  <%= turbo_stream_from "match_#{@match.id}_messages" %>
+  <%= render partial: "messages/message", collection: @match.messages, as: :message %>
+</div>
+
+<%= turbo_frame_tag "new_message" do %>
+  <%= simple_form_for [@match, Message.new] do |f| %>
+    <%= f.input :content, as: :text, label: "Write your message", input_html: { rows: 3, class: "form-control" } %>
+    <%= f.button :submit, "Enviar", class: "btn btn-principal" %>
+  <% end %>
+<% end %>

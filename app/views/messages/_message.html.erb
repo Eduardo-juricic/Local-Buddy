@@ -1,0 +1,5 @@
+<div class="message <%= 'sent' if message.user == current_user %>" id="message_<%= message.id %>">
+  <strong><%= message.user.name %>:</strong>
+  <p><%= message.content %></p>
+  <small><%= message.created_at.strftime("%H:%M - %d/%m/%Y") %></small>
+</div>
