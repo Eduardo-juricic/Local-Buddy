@@ -1,23 +1,15 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
 Profile.destroy_all
 User.destroy_all
 
-50.times do
+5.times do
   User.create(
     email: Faker::Internet.email,
     password: 'password',
     password_confirmation: 'password'
   )
+  puts 'usuario criado'
 end
-
 
 require 'open-uri'
 
@@ -31,7 +23,7 @@ images = {
 }
 
 
-10.times do
+3.times do
   file = URI.parse(images[:brazil]).open
   profile = Profile.new(
     name: Faker::Name.name,
@@ -47,10 +39,11 @@ images = {
     user_id: User.all.sample.id
   )
   profile.photo.attach(io: file, filename: "perfil1.png", content_type: "image/png")
-  profile.save
+  profile.save!
+  puts 'Profile Brazil criado'
 end
 
-10.times do
+3.times do
   file = URI.parse(images[:portugal]).open
   profile = Profile.new(
     name: Faker::Name.name,
@@ -66,10 +59,11 @@ end
     user_id: User.all.sample.id
   )
   profile.photo.attach(io: file, filename: "perfil5.png", content_type: "image/png")
-  profile.save
+  profile.save!
+  puts 'Profile Portugal criado'
 end
 
-10.times do
+3.times do
   file = URI.parse(images[:france]).open
   profile = Profile.new(
     name: Faker::Name.name,
@@ -85,10 +79,11 @@ end
     user_id: User.all.sample.id
   )
   profile.photo.attach(io: file, filename: "perfil8.png", content_type: "image/png")
-  profile.save
+  profile.save!
+  puts 'Profile France criado'
 end
 
-10.times do
+3.times do
   file = URI.parse(images[:spain]).open
   profile = Profile.new(
     name: Faker::Name.name,
@@ -104,10 +99,11 @@ end
     user_id: User.all.sample.id
   )
   profile.photo.attach(io: file, filename: "perfil7.png", content_type: "image/png")
-  profile.save
+  profile.save!
+  puts 'Profile Spain criado'
 end
 
-10.times do
+3.times do
   file = URI.parse(images[:italy]).open
   profile = Profile.new(
     name: Faker::Name.name,
@@ -123,5 +119,6 @@ end
     user_id: User.all.sample.id
   )
   profile.photo.attach(io: file, filename: "perfil2.png", content_type: "image/png")
-  profile.save
+  profile.save!
+  puts 'Profile Spain criado'
 end
