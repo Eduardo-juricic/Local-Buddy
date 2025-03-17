@@ -1,6 +1,6 @@
 <h1 class="title">Profile Details</h1>
 
-<section class="profile-details">
+<section class="profile-list">
   <% if @profile.photo.attached? %>
     <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
   <% end %>
@@ -17,4 +17,7 @@
   <p><strong>Language:</strong> <%= @profile.language %></p>
 
   <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
+  <% if current_user.profile == @profile %>
+  <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
+<% end %>
 </section>

@@ -78,3 +78,4 @@ gem "solid_cable"
 
 gem "cloudinary"
 gem 'faker'
+gem 'sass-rails', '~> 6.0'
