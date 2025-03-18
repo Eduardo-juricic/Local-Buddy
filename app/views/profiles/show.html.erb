@@ -20,9 +20,9 @@
 </div>
 </div>
   <div class="buttons-container">
-    <%= link_to 'Back to Profiles', profiles_path, class: "btn-primario" %>
-    <% if current_user.profile == @profile %>
-      <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn-secundario" %>
-    <% end %>
-  </div>
+  <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
+  <% if current_user.profile == @profile %>
+    <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
+<% end %>
+</div>
 </section>
