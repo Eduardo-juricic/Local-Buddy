@@ -13,7 +13,6 @@ end
 
 require 'open-uri'
 
-
 images = {
   brazil: "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742153667/cld-sample.png",
   portugal: "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742153560/charlesdeluvio-K4mSJ7kc0As-unsplash_dtr15b_ctqkej.png",
@@ -21,7 +20,6 @@ images = {
   spain: "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742153528/vince-veras-AJIqZDAUD7A-unsplash_gk5upv_gcwqsz.png",
   italy: "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742153716/samples/smile.png"
 }
-
 
 3.times do
   file = URI.parse(images[:brazil]).open

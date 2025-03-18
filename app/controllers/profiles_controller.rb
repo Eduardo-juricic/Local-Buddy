@@ -3,13 +3,13 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.where(traveler: false)
+    return unless
+    params[:query].present?
 
-    if params[:query].present?
-      @profiles = @profiles.where(
-        "country ILIKE :query OR city ILIKE :query",
-        query: "%#{params[:query]}%"
-      )
-    end
+    @profiles = @profiles.where(
+      "country ILIKE :query OR city ILIKE :query",
+      query: "%#{params[:query]}%"
+       )
   end
 
   def new
