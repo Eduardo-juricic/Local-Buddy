@@ -4,8 +4,7 @@
 <div class="card-form custom-card">
   <div class="card-body">
   <% if @profile.photo.attached? %>
-   <%# bugcloudinary %>
-   <%#= cl_image_tag @profile.photo.key, alt: "Photo of #{@profile.name}", class: "profile-photo" %>
+    <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
   <% end %>
 
   <h2><%= @profile.name %></h2>
