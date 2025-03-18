@@ -7,6 +7,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body {
+  background-color: #E0F7FA;
+  transition: background-color 0.5s ease;
+}
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";

@@ -1,6 +1,8 @@
 <h1 class="title">Profile Details</h1>
 
 <section class="profile-list">
+<div class="card-form custom-card">
+  <div class="card-body">
   <% if @profile.photo.attached? %>
     <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
   <% end %>
@@ -15,9 +17,12 @@
   <p><strong>Animal Friendly:</strong> <%= @profile.animal %></p>
   <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
   <p><strong>Language:</strong> <%= @profile.language %></p>
-
-  <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "profile-btn" %>
+</div>
+</div>
+  <div class="buttons-container">
+  <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
   <% if current_user.profile == @profile %>
-  <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
+    <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
 <% end %>
+</div>
 </section>
