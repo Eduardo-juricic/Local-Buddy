@@ -12,7 +12,6 @@
           <p><strong>Location:</strong> <%= profile.city %>, <%= profile.country %></p>
           <p><strong>Language:</strong> <%= profile.language %></p>
           <%= link_to "View Profile", profile_path(profile), class: "btn btn-quarto" %>
-          <%= link_to 'Chat', matches_path(user_id: profile.user.id), method: :post, class: 'btn btn-primary' %>
         </article>
       </li>
     <% end %>

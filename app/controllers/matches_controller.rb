@@ -1,6 +1,13 @@
 class MatchesController < ApplicationController
   def show
-    @match = Match.find(params[:id])
+    matched_hash = {
+      user_id: params[:user_id],
+      profile_id: params[:id]
+    }
+    # ver se esse match já existe
+    # se já existe, eviar ele mesmo
+    # se não existe, criar um match novo
+    @match = Match.create(matched_hash)
     @message = Message.new
   end
 
@@ -9,9 +16,8 @@ class MatchesController < ApplicationController
 
     @match = Match.find_by(user: current_user, matched_user: @user) ||
              Match.find_by(user: @user, matched_user: current_user)
-
     unless @match
-      @match = Match.new(user: current_user, matched_user: @user, status: "pending")
+      @match = Match.new(user: current_user, matched_user: @user)
       @match.save
     end
 
