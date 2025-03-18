@@ -1,0 +1,16 @@
+.textarea.form-control {
+  height: 150px;  // Define uma altura maior para o textarea
+  width: 100%;  // Garante que o textarea ocupe toda a largura disponível
+  padding: 1rem;  // Aumenta o padding interno para tornar o texto mais espaçado
+  font-size: 1rem;  // Ajusta o tamanho da fonte para melhorar a legibilidade
+  border-radius: 8px;  // Adiciona bordas arredondadas
+  border: 1px solid $blue;  // Define uma borda azul
+  background-color: $lightest-blue;  // Dá uma cor de fundo clara
+  resize: none;  // Impede o redimensionamento do textarea (opcional)
+
+  &:focus {
+    border-color: $blue;  // Mantém a borda azul quando o campo estiver em foco
+    background-color: $white;  // Muda o fundo para branco ao focar
+    outline: none;  // Remove a borda de foco padrão do navegador
+  }
+}
