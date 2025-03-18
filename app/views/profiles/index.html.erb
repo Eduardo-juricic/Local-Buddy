@@ -7,9 +7,9 @@
     <% @profiles.each do |profile| %>
       <li>
         <article class="profile-card">
-          <% if @profile.photo.attached? %>
-    <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
-      <% end %>
+          <% if profile.photo.attached? %>
+      <%= cl_image_tag profile.photo.key, alt: "Photo of #{profile.name}", class: "profile-photo" %>
+          <% end %>
           <h2><%= profile.name %></h2>
           <p><strong>Location:</strong> <%= profile.city %>, <%= profile.country %></p>
           <p><strong>Language:</strong> <%= profile.language %></p>
