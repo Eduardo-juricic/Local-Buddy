@@ -16,7 +16,7 @@
   <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
   <p><strong>Language:</strong> <%= @profile.language %></p>
 
-  <%= link_to 'Chat', match_path(user_id: @profile.user.id), method: :post, class: 'btn btn-primary' %>
+  <%= link_to 'Send a Message', match_path(@profile.id), class: 'btn btn-primary' %>
 
   <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
   <% if current_user.profile == @profile %>
