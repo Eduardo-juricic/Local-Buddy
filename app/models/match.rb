@@ -1,5 +1,5 @@
 class Match < ApplicationRecord
   belongs_to :user
-  belongs_to :profile, class_name: 'User', foreign_key: 'profile_id'
+  belongs_to :profile
   has_many :messages
 end
