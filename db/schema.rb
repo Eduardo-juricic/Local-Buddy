@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_17_202007) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_18_141346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_202007) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.text "contect"
+    t.string "country"
+    t.string "city"
+    t.bigint "review_id", null: false
+    t.string "profile"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "profile_id", null: false
+    t.string "image"
+    t.index ["profile_id"], name: "index_experiences_on_profile_id"
+    t.index ["review_id"], name: "index_experiences_on_review_id"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -78,6 +92,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_202007) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_reviews_on_profile_id"
+  end
+
   create_table "solid_cable_messages", force: :cascade do |t|
     t.text "channel"
     t.text "payload"
@@ -102,9 +125,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_202007) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "experiences", "profiles"
+  add_foreign_key "experiences", "reviews"
   add_foreign_key "matches", "profiles"
   add_foreign_key "matches", "users"
   add_foreign_key "messages", "matches"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reviews", "profiles"
 end
