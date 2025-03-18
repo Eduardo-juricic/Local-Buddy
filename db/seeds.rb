@@ -24,7 +24,7 @@ images = {
 
 
 3.times do
-  file = URI.parse(images[:brazil]).open
+  #file = URI.parse(images[:brazil]).open
   profile = Profile.new(
     name: Faker::Name.name,
     bio: "I am #{Faker::Name.first_name}, a person who loves to travel. I am #{rand(18..65)} years old and enjoy exploring new cultures and landscapes. In my free time, I like to practice outdoor sports and hang out with friends at parties.",
@@ -38,7 +38,7 @@ images = {
     language: 'English, Portuguese',
     user_id: User.all.sample.id
   )
-  profile.photo.attach(io: file, filename: "perfil1.png", content_type: "image/png")
+  #profile.photo.attach(io: file, filename: "perfil1.png", content_type: "image/png")
   profile.save!
   puts 'Profile Brazil criado'
 end
