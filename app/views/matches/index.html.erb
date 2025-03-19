@@ -1,0 +1,7 @@
+<h1>Meus Matches</h1>
+
+<% @matches.each do |match| %>
+  <div>
+    <%= link_to "Chat com #{match.other_user.name}", match_path(match) %>
+  </div>
+<% end %>
