@@ -1,25 +1,38 @@
 <h1 class="title">Profile Details</h1>
 
 <section class="profile-list">
-  <% if @profile.photo.attached? %>
-    <img src="<%= @profile.photo.url %>" alt="Photo of <%= @profile.name %>" class="profile-photo">
-  <% end %>
+  <div class="card-form custom-card">
+    <div class="card-body">
+      <% if @profile.photo.attached? %>
+        <%= cl_image_tag @profile.photo.key, alt: "Photo of #{@profile.name}", class: "profile-photo" %>
+      <% end %>
 
-  <h2><%= @profile.name %></h2>
+      <h2><%= @profile.name %></h2>
 
-  <p><strong>Bio:</strong> <%= @profile.bio %></p>
-  <p><strong>Location:</strong> <%= @profile.city %>, <%= @profile.country %></p>
-  <p><strong>Traveler:</strong> <%= @profile.traveler ? 'Yes' : 'No' %></p>
-  <p><strong>Preferences:</strong> <%= @profile.preferences %></p>
-  <p><strong>Food:</strong> <%= @profile.food %></p>
-  <p><strong>Animal Friendly:</strong> <%= @profile.animal %></p>
-  <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
-  <p><strong>Language:</strong> <%= @profile.language %></p>
+      <p><strong>Bio:</strong> <%= @profile.bio %></p>
+      <p><strong>Location:</strong> <%= @profile.city %>, <%= @profile.country %></p>
+      <p><strong>Traveler:</strong> <%= @profile.traveler ? 'Yes' : 'No' %></p>
+      <p><strong>Preferences:</strong> <%= @profile.preferences %></p>
+      <p><strong>Food:</strong> <%= @profile.food %></p>
+      <p><strong>Animal Friendly:</strong> <%= @profile.animal %></p>
+      <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
+      <p><strong>Language:</strong> <%= @profile.language %></p>
+    </div>
+  </div>
 
+<<<<<<< HEAD
   <%= link_to 'Match', matches_path, class: 'btn btn-primary', data: { turbo_method: :post } %>
 
   <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
   <% if current_user.profile == @profile %>
   <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
 <% end %>
+=======
+  <div class="buttons-container">
+    <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
+    <% if current_user.profile == @profile %>
+      <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+>>>>>>> 76d2179c54ca864296685994cba26fa9bcc027ac
 </section>

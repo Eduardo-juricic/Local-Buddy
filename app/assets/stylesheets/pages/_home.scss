@@ -1,1 +1,54 @@
 // Specific CSS for your home-page
+.baner {
+  padding: 50px 15px;
+  border-radius: 10px;
+}
+
+.search-box {
+  max-width: 500px;
+}
+
+.btn-pesquisa {
+  font-weight: bold;
+  background-color: $light-blue;  // Cor do botão de pesquisa
+  color: $white;  // Texto branco no botão
+}
+
+.titulo {
+  color: #1369CB;
+}
+
+h2 {
+  color: #1369CB;
+}
+
+p {
+  color: #66757F;
+}
+
+.card-body {
+  color: #66757F;
+}
+
+.card-title {
+  color: $lightest-blue;
+}
+
+.btn-explore{
+  background-color: #1369CB;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  color: white;
+  margin: 10px auto;
+  display: inline-block;
+  font-size: 12px;
+
+  &:hover {
+    background-color: #7EB9FC;
+  }
+}
