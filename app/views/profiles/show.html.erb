@@ -17,13 +17,14 @@
       <p><strong>Animal Friendly:</strong> <%= @profile.animal %></p>
       <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
       <p><strong>Language:</strong> <%= @profile.language %></p>
-    </div>
-  </div>
+
 
   <div class="buttons-container">
-    <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "profile-btn" %>
+    <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
     <% if current_user.profile == @profile %>
-      <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
+      <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-quinto" %>
     <% end %>
   </div>
 </section>
+  </div>
+  </div>

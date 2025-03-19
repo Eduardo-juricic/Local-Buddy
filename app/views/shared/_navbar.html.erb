@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "Logo.local.buddy.jpg", alt: "Home",  width: "60", height: "60" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,13 +19,17 @@
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <% if current_user.profile && current_user.profile.photo.attached? %>
+             <%= image_tag current_user.profile.photo, class: "avatar", alt: "dropdown menu", width: "40", height: "40" %>
+             <% else %>
+             <%= image_tag "default-avatar.jpg", class: "avatar", alt: "dropdown menu" %>
+             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile.present? %>
                <%= link_to "Meu Perfil", profile_path(current_user.profile), class: "dropdown-item" %>
               <% end %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
