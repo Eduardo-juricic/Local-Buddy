@@ -19,9 +19,7 @@
       <p><strong>Language:</strong> <%= @profile.language %></p>
 
 
-
-
-  <div class="buttons-container">
+<div class="buttons-container">
   <%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
     <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
     <% if current_user.profile == @profile %>
