@@ -16,7 +16,7 @@
   <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
   <p><strong>Language:</strong> <%= @profile.language %></p>
 
- <%= link_to 'Match', matches_path(user_id: @user.id, profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
+  <%= link_to 'Match', matches_path, class: 'btn btn-primary', data: { turbo_method: :post } %>
 
   <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
   <% if current_user.profile == @profile %>

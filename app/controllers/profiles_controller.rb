@@ -29,7 +29,6 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
-    @user = current_user # ou a lógica que você usa para encontrar o usuário associado ao perfil
   end
 
   def edit

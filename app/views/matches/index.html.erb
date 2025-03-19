@@ -1,11 +1,7 @@
-<h1>My Matches</h1>
+<h1>Meus Matches</h1>
 
-<% if @matches.present? %>
-  <% @matches.each do |match| %>
-    <div>
-      <h3><%= match.profile.name %></h3>
-    </div>
-  <% end %>
-<% else %>
-  <p>No matches found.</p>
+<% @matches.each do |match| %>
+  <div>
+    <%= link_to "Chat com #{match.other_user.name}", match_path(match) %>
+  </div>
 <% end %>
