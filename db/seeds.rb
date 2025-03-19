@@ -1,4 +1,5 @@
-
+Message.destroy_all
+Match.destroy_all
 Profile.destroy_all
 User.destroy_all
 
@@ -18,8 +19,8 @@ profile1 = Profile.create!(
   language: 'Portuguese, English',
   user: user1
 )
-file1 = Rails.root.join("app/assets/images/perfil1.png")
-profile1.photo.attach(io: File.open(file1), filename: "perfil1.png", content_type: "image/png")
+file1 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153560/charlesdeluvio-K4mSJ7kc0As-unsplash_dtr15b_ctqkej.png").open
+profile1.photo.attach(io: file1, filename: "perfil1.png", content_type: "image/png")
 profile1.save
 puts "user 1 created"
 
@@ -38,8 +39,8 @@ profile2 = Profile.create!(
   language: 'Portuguese, Spanish',
   user: user2
 )
-file2 = Rails.root.join("app/assets/images/perfil2.png")
-profile2.photo.attach(io: File.open(file2), filename: "perfil2.png", content_type: "image/png")
+file2 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile2.photo.attach(io: file2, filename: "perfil2.png", content_type: "image/png")
 profile2.save
 puts "user 2 created"
 
@@ -58,8 +59,8 @@ profile3 = Profile.create!(
   language: 'Portuguese, English',
   user: user3
 )
-file3 = Rails.root.join("app/assets/images/perfil3.png")
-profile3.photo.attach(io: File.open(file3), filename: "perfil3.png", content_type: "image/png")
+file3 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153448/gabriel-silverio-u3WmDyKGsrY-unsplash_yubqso_viauha.png").open
+profile3.photo.attach(io: file3, filename: "perfil3.png", content_type: "image/png")
 profile3.save
 puts "user 3 created"
 
@@ -78,8 +79,8 @@ profile4 = Profile.create!(
   language: 'Portuguese, English',
   user: user4
 )
-file4 = Rails.root.join("app/assets/images/perfil4.png")
-profile4.photo.attach(io: File.open(file4), filename: "perfil4.png", content_type: "image/png")
+file4 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153528/vince-veras-AJIqZDAUD7A-unsplash_gk5upv_gcwqsz.png").open
+profile4.photo.attach(io: file4, filename: "perfil4.png", content_type: "image/png")
 profile4.save
 puts "user 4 created"
 
@@ -98,8 +99,8 @@ profile5 = Profile.create!(
   language: 'Portuguese, French',
   user: user5
 )
-file5 = Rails.root.join("app/assets/images/perfil5.png")
-profile5.photo.attach(io: File.open(file5), filename: "perfil5.png", content_type: "image/png")
+file5 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile5.photo.attach(io: file5, filename: "perfil5.png", content_type: "image/png")
 profile5.save
 puts "user 5 created"
 
@@ -118,8 +119,8 @@ profile6 = Profile.create!(
   language: 'Portuguese, English',
   user: user6
 )
-file6 = Rails.root.join("app/assets/images/perfil1.png")
-profile6.photo.attach(io: File.open(file6), filename: "perfil1.png", content_type: "image/png")
+file6 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742318955/ieyxlkq1ati1umpnfvgg5to7kaoa_v56c0z.png").open
+profile6.photo.attach(io: file6, filename: "perfil1.png", content_type: "image/png")
 profile6.save
 puts "user 6 created"
 
@@ -138,8 +139,8 @@ profile7 = Profile.create!(
   language: 'French, English',
   user: user7
 )
-file7 = Rails.root.join("app/assets/images/perfil5.png")
-profile7.photo.attach(io: File.open(file7), filename: "perfil5.png", content_type: "image/png")
+file7 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile7.photo.attach(io: file7, filename: "perfil5.png", content_type: "image/png")
 profile7.save
 puts "user 7 created"
 
@@ -158,8 +159,8 @@ profile8 = Profile.create!(
   language: 'French, English',
   user: user8
 )
-file8 = Rails.root.join("app/assets/images/perfil2.png")
-profile8.photo.attach(io: File.open(file8), filename: "perfil2.png", content_type: "image/png")
+file8 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153560/charlesdeluvio-K4mSJ7kc0As-unsplash_dtr15b_ctqkej.png").open
+profile8.photo.attach(io: file8, filename: "perfil2.png", content_type: "image/png")
 profile8.save
 puts "user 8 created"
 
@@ -178,8 +179,8 @@ profile9 = Profile.create!(
   language: 'French, Spanish',
   user: user9
 )
-file9 = Rails.root.join("app/assets/images/perfil3.png")
-profile9.photo.attach(io: File.open(file9), filename: "perfil3.png", content_type: "image/png")
+file9 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile9.photo.attach(io: file9, filename: "perfil3.png", content_type: "image/png")
 profile9.save
 puts "user 9 created"
 
@@ -198,8 +199,8 @@ profile10 = Profile.create!(
   language: 'Spanish, English',
   user: user10
 )
-file10 = Rails.root.join("app/assets/images/perfil2.png")
-profile10.photo.attach(io: File.open(file10), filename: "perfil2.png", content_type: "image/png")
+file10 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153528/vince-veras-AJIqZDAUD7A-unsplash_gk5upv_gcwqsz.png").open
+profile10.photo.attach(io: file10, filename: "perfil2.png", content_type: "image/png")
 profile10.save
 puts "user 10 created"
 
@@ -218,8 +219,8 @@ profile11 = Profile.create!(
   language: 'Spanish, English',
   user: user11
 )
-file11 = Rails.root.join("app/assets/images/perfil1.png")
-profile11.photo.attach(io: File.open(file11), filename: "perfil1.png", content_type: "image/png")
+file11 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile11.photo.attach(io: file11, filename: "perfil1.png", content_type: "image/png")
 profile11.save
 puts "user 11 created"
 
@@ -238,8 +239,8 @@ profile12 = Profile.create!(
   language: 'Spanish, French',
   user: user12
 )
-file12 = Rails.root.join("app/assets/images/perfil5.png")
-profile12.photo.attach(io: File.open(file12), filename: "perfil5.png", content_type: "image/png")
+file12 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742318955/ieyxlkq1ati1umpnfvgg5to7kaoa_v56c0z.png").open
+profile12.photo.attach(io: file12, filename: "perfil5.png", content_type: "image/png")
 profile12.save
 puts "user 12 created"
 
@@ -258,8 +259,8 @@ profile13 = Profile.create!(
   language: 'Italian, English',
   user: user13
 )
-file13 = Rails.root.join("app/assets/images/perfil2.png")
-profile13.photo.attach(io: File.open(file13), filename: "perfil2.png", content_type: "image/png")
+file13 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile13.photo.attach(io: file13, filename: "perfil2.png", content_type: "image/png")
 profile13.save
 puts "user 13 created"
 
@@ -278,8 +279,8 @@ profile14 = Profile.create!(
   language: 'Italian, English',
   user: user14
 )
-file14 = Rails.root.join("app/assets/images/perfil4.png")
-profile14.photo.attach(io: File.open(file14), filename: "perfil4.png", content_type: "image/png")
+file14 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742318955/ieyxlkq1ati1umpnfvgg5to7kaoa_v56c0z.png").open
+profile14.photo.attach(io: file14, filename: "perfil4.png", content_type: "image/png")
 profile14.save
 puts "user 14 created"
 
@@ -298,8 +299,8 @@ profile15 = Profile.create!(
   language: 'Italian, English',
   user: user15
 )
-file15 = Rails.root.join("app/assets/images/perfil5.png")
-profile15.photo.attach(io: File.open(file15), filename: "perfil5.png", content_type: "image/png")
+file15 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile15.photo.attach(io: file15, filename: "perfil5.png", content_type: "image/png")
 profile15.save
 puts "user 15 created"
 
@@ -322,8 +323,8 @@ profile16 = Profile.create!(
   language: 'Portuguese, English',
   user: user16
 )
-file16 = Rails.root.join("app/assets/images/perfil5.png")
-profile16.photo.attach(io: File.open(file1), filename: "perfil5.png", content_type: "image/png")
+file16 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153560/charlesdeluvio-K4mSJ7kc0As-unsplash_dtr15b_ctqkej.png").open
+profile16.photo.attach(io: file16, filename: "perfil5.png", content_type: "image/png")
 profile16.save
 puts "user 16 created"
 
@@ -342,8 +343,8 @@ profile17 = Profile.create!(
   language: 'Portuguese, Spanish',
   user: user17
 )
-file17 = Rails.root.join("app/assets/images/perfil4.png")
-profile17.photo.attach(io: File.open(file2), filename: "perfil4.png", content_type: "image/png")
+file17 = URI.parse("https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww").open
+profile17.photo.attach(io: file17, filename: "perfil4.png", content_type: "image/png")
 profile17.save
 puts "user 17 created"
 
@@ -362,8 +363,8 @@ profile18 = Profile.create!(
   language: 'Portuguese, English',
   user: user18
 )
-file18 = Rails.root.join("app/assets/images/perfil1.png")
-profile18.photo.attach(io: File.open(file3), filename: "perfil1.png", content_type: "image/png")
+file18 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153560/charlesdeluvio-K4mSJ7kc0As-unsplash_dtr15b_ctqkej.png").open
+profile18.photo.attach(io: file18, filename: "perfil1.png", content_type: "image/png")
 profile18.save
 puts "user 18 created"
 
@@ -382,109 +383,109 @@ profile19 = Profile.create!(
   language: 'Portuguese, English',
   user: user19
 )
-file19 = Rails.root.join("app/assets/images/perfil4.png")
-profile19.photo.attach(io: File.open(file4), filename: "perfil4.png", content_type: "image/png")
+file19 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153560/charlesdeluvio-K4mSJ7kc0As-unsplash_dtr15b_ctqkej.png").open
+profile19.photo.attach(io: file19, filename: "perfil4.png", content_type: "image/png")
 profile19.save
 puts "user 19 created"
 
-puts "creating user 20"
-user20 = User.create!(email: 'user5@portugal.com', password: 'password', password_confirmation: 'password')
-profile20 = Profile.create!(
-  name: 'Helena Martins',
-  bio: 'I am Helena, a photographer who loves capturing the essence of Lisbon. I enjoy exploring the city’s markets and photographing local life.',
-  country: 'Portugal',
-  city: 'Lisbon',
-  traveler: false,
-  preferences: 'Photography, Culture, City Life',
-  food: 'Pastel de Nata',
-  animal: 'Cat',
-  availability: 'Available on weekends',
-  language: 'Portuguese, English',
-  user: user20
-)
-file20 = Rails.root.join("app/assets/images/perfil1.png")
-profile20.photo.attach(io: File.open(file5), filename: "perfil1.png", content_type: "image/png")
-profile20.save
-puts "user 20 created"
+# puts "creating user 20"
+# user20 = User.create!(email: 'user5@portugal.com', password: 'password', password_confirmation: 'password')
+# profile20 = Profile.create!(
+#   name: 'Helena Martins',
+#   bio: 'I am Helena, a photographer who loves capturing the essence of Lisbon. I enjoy exploring the city’s markets and photographing local life.',
+#   country: 'Portugal',
+#   city: 'Lisbon',
+#   traveler: false,
+#   preferences: 'Photography, Culture, City Life',
+#   food: 'Pastel de Nata',
+#   animal: 'Cat',
+#   availability: 'Available on weekends',
+#   language: 'Portuguese, English',
+#   user: user20
+# )
+# file20 = Rails.root.join("app/assets/images/perfil1.png")
+# profile20.photo.attach(io: File.open(file5), filename: "perfil1.png", content_type: "image/png")
+# profile20.save
+# puts "user 20 created"
 
-puts "creating user 21"
-user21 = User.create!(email: 'user6@portugal.com', password: 'password', password_confirmation: 'password')
-profile21 = Profile.create!(
-  name: 'Miguel Costa',
-  bio: 'I am Miguel, a history enthusiast and lover of Lisbon’s old buildings. I love visiting historic sites and learning more about the city’s past.',
-  country: 'Portugal',
-  city: 'Lisbon',
-  traveler: false,
-  preferences: 'History, Architecture, Museums',
-  food: 'Francesinha',
-  animal: 'Dog',
-  availability: 'Available on weekdays',
-  language: 'Portuguese, Spanish',
-  user: user21
-)
-file21 = Rails.root.join("app/assets/images/perfil2.png")
-profile21.photo.attach(io: File.open(file6), filename: "perfil2.png", content_type: "image/png")
-profile21.save
-puts "user 21 created"
+# puts "creating user 21"
+# user21 = User.create!(email: 'user6@portugal.com', password: 'password', password_confirmation: 'password')
+# profile21 = Profile.create!(
+#   name: 'Miguel Costa',
+#   bio: 'I am Miguel, a history enthusiast and lover of Lisbon’s old buildings. I love visiting historic sites and learning more about the city’s past.',
+#   country: 'Portugal',
+#   city: 'Lisbon',
+#   traveler: false,
+#   preferences: 'History, Architecture, Museums',
+#   food: 'Francesinha',
+#   animal: 'Dog',
+#   availability: 'Available on weekdays',
+#   language: 'Portuguese, Spanish',
+#   user: user21
+# )
+# file21 = Rails.root.join("app/assets/images/perfil2.png")
+# profile21.photo.attach(io: File.open(file6), filename: "perfil2.png", content_type: "image/png")
+# profile21.save
+# puts "user 21 created"
 
-puts "creating user 22"
-user22 = User.create!(email: 'user4@france.com', password: 'password', password_confirmation: 'password')
-profile22 = Profile.create!(
-  name: 'Lucas Dupont',
-  bio: 'I am Lucas, a lover of modern art and local cafes. I enjoy visiting museums and discovering new art exhibitions around Paris.',
-  country: 'France',
-  city: 'Paris',
-  traveler: false,
-  preferences: 'Art, Museums, Cafes',
-  food: 'Croissant',
-  animal: 'Cat',
-  availability: 'Available on weekends',
-  language: 'French, English',
-  user: user22
-)
-file22 = Rails.root.join("app/assets/images/perfil3.png")
-profile22.photo.attach(io: File.open(file7), filename: "perfil3.png", content_type: "image/png")
-profile22.save
-puts "user 22 created"
+# puts "creating user 22"
+# user22 = User.create!(email: 'user4@france.com', password: 'password', password_confirmation: 'password')
+# profile22 = Profile.create!(
+#   name: 'Lucas Dupont',
+#   bio: 'I am Lucas, a lover of modern art and local cafes. I enjoy visiting museums and discovering new art exhibitions around Paris.',
+#   country: 'France',
+#   city: 'Paris',
+#   traveler: false,
+#   preferences: 'Art, Museums, Cafes',
+#   food: 'Croissant',
+#   animal: 'Cat',
+#   availability: 'Available on weekends',
+#   language: 'French, English',
+#   user: user22
+# )
+# file22 = Rails.root.join("app/assets/images/perfil3.png")
+# profile22.photo.attach(io: File.open(file7), filename: "perfil3.png", content_type: "image/png")
+# profile22.save
+# puts "user 22 created"
 
-puts "creating user 23"
-user23 = User.create!(email: 'user5@france.com', password: 'password', password_confirmation: 'password')
-profile23 = Profile.create!(
-  name: 'Marie Lefevre',
-  bio: 'I am Marie, a passionate traveler who loves exploring Parisian markets and tasting local pastries. I enjoy finding unique places in the city.',
-  country: 'France',
-  city: 'Paris',
-  traveler: false,
-  preferences: 'Markets, Pastries, Photography',
-  food: 'Macaron',
-  animal: 'Bird',
-  availability: 'Available on weekdays',
-  language: 'French, English',
-  user: user23
-)
-file23 = Rails.root.join("app/assets/images/perfil5.png")
-profile23.photo.attach(io: File.open(file8), filename: "perfil5.png", content_type: "image/png")
-profile23.save
-puts "user 23 created"
+# puts "creating user 23"
+# user23 = User.create!(email: 'user5@france.com', password: 'password', password_confirmation: 'password')
+# profile23 = Profile.create!(
+#   name: 'Marie Lefevre',
+#   bio: 'I am Marie, a passionate traveler who loves exploring Parisian markets and tasting local pastries. I enjoy finding unique places in the city.',
+#   country: 'France',
+#   city: 'Paris',
+#   traveler: false,
+#   preferences: 'Markets, Pastries, Photography',
+#   food: 'Macaron',
+#   animal: 'Bird',
+#   availability: 'Available on weekdays',
+#   language: 'French, English',
+#   user: user23
+# )
+# file23 = Rails.root.join("app/assets/images/perfil5.png")
+# profile23.photo.attach(io: File.open(file8), filename: "perfil5.png", content_type: "image/png")
+# profile23.save
+# puts "user 23 created"
 
-puts "creating user 24"
-user24 = User.create!(email: 'user6@france.com', password: 'password', password_confirmation: 'password')
-profile24 = Profile.create!(
-  name: 'Sophie Martin',
-  bio: 'I am Sophie, a fan of Parisian life and fashion. I enjoy shopping in boutiques and walking through the elegant streets of Paris.',
-  country: 'France',
-  city: 'Paris',
-  traveler: false,
-  preferences: 'Fashion, Shopping, City Life',
-  food: 'Quiche Lorraine',
-  animal: 'Dog',
-  availability: 'Available on weekends',
-  language: 'French, Spanish',
-  user: user24
-)
-file24 = Rails.root.join("app/assets/images/perfil4.png")
-profile24.photo.attach(io: File.open(file9), filename: "perfil4.png", content_type: "image/png")
-profile24.save
-puts "user 24 created"
+# puts "creating user 24"
+# user24 = User.create!(email: 'user6@france.com', password: 'password', password_confirmation: 'password')
+# profile24 = Profile.create!(
+#   name: 'Sophie Martin',
+#   bio: 'I am Sophie, a fan of Parisian life and fashion. I enjoy shopping in boutiques and walking through the elegant streets of Paris.',
+#   country: 'France',
+#   city: 'Paris',
+#   traveler: false,
+#   preferences: 'Fashion, Shopping, City Life',
+#   food: 'Quiche Lorraine',
+#   animal: 'Dog',
+#   availability: 'Available on weekends',
+#   language: 'French, Spanish',
+#   user: user24
+# )
+# file24 = Rails.root.join("app/assets/images/perfil4.png")
+# profile24.photo.attach(io: File.open(file9), filename: "perfil4.png", content_type: "image/png")
+# profile24.save
+# puts "user 24 created"
 
 puts "All users and profiles created successfully!"
