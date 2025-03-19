@@ -14,7 +14,7 @@
           <p><strong>Location:</strong> <%= profile.city %>, <%= profile.country %></p>
           <p><strong>Language:</strong> <%= profile.language %></p>
           <div class="buttons-container">
-          <%= link_to "View Profile", profile_path(profile), class: "btn btn-quarto" %>
+          <%= link_to "View Profile", profile_path(profile, query: params[:query]), class: "btn btn-quarto" %>
         </div>
         </article>
       </li>
