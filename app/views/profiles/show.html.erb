@@ -20,7 +20,7 @@
     </div>
   </div>
 
-<%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
+  <%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
 
   <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
   <% if current_user.profile == @profile %>

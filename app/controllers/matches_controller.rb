@@ -1,14 +1,26 @@
 class MatchesController < ApplicationController
+
   def show
     @match = Match.find(params[:id])
     @message = Message.new
   end
 
   def create
-    match = Match.find_or_create_by(user_id: current_user.id, profile_id: params[:profile_id]) do |m|
-      m.profile_id = params[:profile_id]
+    user = current_user
+    profile = Profile.find(params[:profile_id])
+    current_profile = Profile.find_by(user_id: user)
+
+    @match = Match.find_by(user_id: profile.user_id, profile_id: current_profile)
+    if @match
+      redirect_to match_path(@match), notice: 'Match already exists.'
+    else
+      @match = Match.create(user_id: user.id, profile_id: profile.id)
+      if @match.persisted?
+        redirect_to match_path(@match), notice: 'Match created successfully.'
+      else
+        redirect_to profiles_path, alert: 'Unable to create match.'
+      end
     end
-    redirect_to match_path(match)
   end
 
   private
