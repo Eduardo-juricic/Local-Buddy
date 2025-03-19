@@ -64,7 +64,7 @@ profile3.save
 puts "user 3 created"
 
 puts "creating user 4"
-user4 = User.create!(email: 'user4@portugal.com', password: 'password', password_confirmation: 'password')
+user4 = User.create!(email: 'user1@portugal.com', password: 'password', password_confirmation: 'password')
 profile4 = Profile.create!(
   name: 'João Costa',
   bio: 'I am João, a lover of travel and nature. I enjoy relaxing in cafés and exploring new tourist destinations.',
@@ -84,7 +84,7 @@ profile4.save
 puts "user 4 created"
 
 puts "creating user 5"
-user5 = User.create!(email: 'user5@portugal.com', password: 'password', password_confirmation: 'password')
+user5 = User.create!(email: 'user2@portugal.com', password: 'password', password_confirmation: 'password')
 profile5 = Profile.create!(
   name: 'Sofia Almeida',
   bio: 'I am Sofia, passionate about art and history. I enjoy cultural tours and exploring museums in Lisbon.',
@@ -104,7 +104,7 @@ profile5.save
 puts "user 5 created"
 
 puts "creating user 6"
-user6 = User.create!(email: 'user6@portugal.com', password: 'password', password_confirmation: 'password')
+user6 = User.create!(email: 'user3@portugal.com', password: 'password', password_confirmation: 'password')
 profile6 = Profile.create!(
   name: 'Miguel Pereira',
   bio: 'I am Miguel, a gastronomy and travel enthusiast. I enjoy exploring markets and trying new dishes.',
@@ -184,7 +184,7 @@ profile9.save
 puts "user 9 created"
 
 puts "creating user 10"
-user10 = User.create!(email: 'user4@spain.com', password: 'password', password_confirmation: 'password')
+user10 = User.create!(email: 'user1@spain.com', password: 'password', password_confirmation: 'password')
 profile10 = Profile.create!(
   name: 'Maria García',
   bio: 'I am Maria, passionate about new experiences, especially at the beach and exploring local gastronomy. Always looking for the best of every place.',
@@ -204,7 +204,7 @@ profile10.save
 puts "user 10 created"
 
 puts "creating user 11"
-user11 = User.create!(email: 'user5@spain.com', password: 'password', password_confirmation: 'password')
+user11 = User.create!(email: 'user2@spain.com', password: 'password', password_confirmation: 'password')
 profile11 = Profile.create!(
   name: 'Carlos Martínez',
   bio: 'I am Carlos, a lover of extreme sports and outdoor life. I love surfing and exploring new beaches in Barcelona.',
@@ -224,7 +224,7 @@ profile11.save
 puts "user 11 created"
 
 puts "creating user 12"
-user12 = User.create!(email: 'user6@spain.com', password: 'password', password_confirmation: 'password')
+user12 = User.create!(email: 'user3@spain.com', password: 'password', password_confirmation: 'password')
 profile12 = Profile.create!(
   name: 'Lucía Fernández',
   bio: 'I am Lucía, passionate about nightlife and music. I enjoy parties, bars, and discovering new places in Barcelona.',
