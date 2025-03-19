@@ -19,21 +19,15 @@
       <p><strong>Language:</strong> <%= @profile.language %></p>
 
 
-<<<<<<< HEAD
-  <%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
 
-  <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
-  <% if current_user.profile == @profile %>
-  <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
-<% end %>
-=======
+
   <div class="buttons-container">
+  <%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
     <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
     <% if current_user.profile == @profile %>
       <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-quinto" %>
     <% end %>
   </div>
->>>>>>> 7d88a8f737856e810ecdd46cc3e6d696330c74d5
+  </div>
+  </div>
 </section>
-  </div>
-  </div>
