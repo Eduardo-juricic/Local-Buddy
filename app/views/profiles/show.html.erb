@@ -20,19 +20,10 @@
     </div>
   </div>
 
-<<<<<<< HEAD
-  <%= link_to 'Match', matches_path, class: 'btn btn-primary', data: { turbo_method: :post } %>
+<%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
 
   <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
   <% if current_user.profile == @profile %>
   <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
 <% end %>
-=======
-  <div class="buttons-container">
-    <%= link_to 'Back to Profiles', profiles_path, class: "profile-btn" %>
-    <% if current_user.profile == @profile %>
-      <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-primary" %>
-    <% end %>
-  </div>
->>>>>>> 76d2179c54ca864296685994cba26fa9bcc027ac
 </section>
