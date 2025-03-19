@@ -1,22 +1,24 @@
 class MatchesController < ApplicationController
+  def index
+    @matches = Match.all
+  end
+
   def show
-    @message = Message.new
+    @match = Match.find(params[:id])
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @match = Match.find_by(user: current_user, profile: @user) ||
-             Match.find_by(user: @user, profile: current_user)
-    unless @match
-      @match = Match.new(user: current_user, profile: @user)
-      @match.save
+    @match = Match.new(match_params)
+    if @match.save
+      redirect_to @match
+    else
+      render :new
     end
-    redirect_to match_path(@match)
   end
 
   private
 
   def match_params
-    params.require(:match).permit(:status)
+    params.require(:match).permit(:user_id, :other_user_id)
   end
 end

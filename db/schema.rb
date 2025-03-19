@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_18_162455) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_18_235803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,8 +47,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_162455) do
     t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "matched_user_id"
-    t.index ["matched_user_id"], name: "index_matches_on_matched_user_id"
     t.index ["profile_id"], name: "index_matches_on_profile_id"
     t.index ["user_id"], name: "index_matches_on_user_id"
   end
@@ -106,7 +104,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_162455) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "matches", "profiles"
   add_foreign_key "matches", "users"
-  add_foreign_key "matches", "users", column: "matched_user_id"
   add_foreign_key "messages", "matches"
   add_foreign_key "messages", "users"
   add_foreign_key "profiles", "users"

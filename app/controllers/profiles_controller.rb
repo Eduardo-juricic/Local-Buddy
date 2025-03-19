@@ -3,17 +3,18 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.where(traveler: false)
-    return unless
-    params[:query].present?
 
-    @profiles = @profiles.where(
-      "country ILIKE :query OR city ILIKE :query",
-      query: "%#{params[:query]}%"
-       )
+    if params[:query].present?
+      @profiles = @profiles.where(
+        "country ILIKE :query OR city ILIKE :query",
+        query: "%#{params[:query]}%"
+      )
+    end
   end
 
   def new
     redirect_to root_path if current_user.profile.present?
+
     @profile = Profile.new
   end
 
@@ -28,6 +29,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @user = current_user # ou a lógica que você usa para encontrar o usuário associado ao perfil
   end
 
   def edit

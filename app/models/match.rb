@@ -1,5 +1,6 @@
 class Match < ApplicationRecord
   belongs_to :user
   belongs_to :profile
-  has_many :messages
+
+  validates :user_id, uniqueness: { scope: :profile_id }
 end
