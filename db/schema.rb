@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_17_202007) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_19_111009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_202007) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_matches_on_profile_id"
+    t.index ["user_id", "profile_id"], name: "index_matches_on_user_id_and_profile_id", unique: true
     t.index ["user_id"], name: "index_matches_on_user_id"
   end
 

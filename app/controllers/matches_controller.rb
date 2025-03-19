@@ -1,25 +1,31 @@
 class MatchesController < ApplicationController
+
   def show
     @match = Match.find(params[:id])
     @message = Message.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @match = Match.new(match_params)
-    @match.user = current_user
-    @match.matched_user = @user
+    user = current_user
+    profile = Profile.find(params[:profile_id])
+    current_profile = Profile.find_by(user_id: user)
 
-    if @match.save
-      redirect_to @user
+    @match = Match.find_by(user_id: profile.user_id, profile_id: current_profile)
+    if @match
+      redirect_to match_path(@match), notice: 'Match already exists.'
     else
-      render "users/show"
+      @match = Match.create(user_id: user.id, profile_id: profile.id)
+      if @match.persisted?
+        redirect_to match_path(@match), notice: 'Match created successfully.'
+      else
+        redirect_to profiles_path, alert: 'Unable to create match.'
+      end
     end
   end
 
   private
 
   def match_params
-    params.require(:match).permit(:status) 
+    params.require(:match).permit(:profile_id)
   end
 end

@@ -11,6 +11,11 @@ User.destroy_all
   puts 'usuario criado'
 end
 
+<<<<<<< HEAD
+require 'open-uri'
+
+=======
+>>>>>>> 76d2179c54ca864296685994cba26fa9bcc027ac
 images = {
   brazil: Rails.root.join("app/assets/images/perfil1.png"),
   portugal: Rails.root.join("app/assets/images/perfil2.png"),
@@ -18,7 +23,6 @@ images = {
   spain: Rails.root.join("app/assets/images/perfil3.png"),
   italy: Rails.root.join("app/assets/images/perfil5.png")
 }
-
 
 3.times do
 file = File.open(images[:brazil])
