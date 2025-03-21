@@ -3,7 +3,7 @@
 <div id="messages">
   <%= turbo_frame_tag :messages do %>
     <% @messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <%= render "messages/message", message: message, user: message.user %>
     <% end %>
   <% end %>
 </div>
