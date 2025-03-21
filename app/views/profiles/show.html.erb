@@ -1,31 +1,29 @@
-<h1 class="title">Profile Details</h1>
-
+<h1 class="title-profile">Profile Details</h1>
 <section class="profile-list">
   <div class="card-form custom-card">
-    <div class="card-body">
+    <div class="card-form-body">
       <% if @profile.photo.attached? %>
         <%= cl_image_tag @profile.photo.key, alt: "Photo of #{@profile.name}", class: "profile-photo" %>
       <% end %>
-
       <h2><%= @profile.name %></h2>
-
       <p><strong>Bio:</strong> <%= @profile.bio %></p>
       <p><strong>Location:</strong> <%= @profile.city %>, <%= @profile.country %></p>
       <p><strong>Traveler:</strong> <%= @profile.traveler ? 'Yes' : 'No' %></p>
       <p><strong>Preferences:</strong> <%= @profile.preferences %></p>
       <p><strong>Food:</strong> <%= @profile.food %></p>
-      <p><strong>Animal Friendly:</strong> <%= @profile.animal %></p>
+      <p><strong>Animal:</strong> <%= @profile.animal %></p>
       <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
       <p><strong>Language:</strong> <%= @profile.language %></p>
 
-
-<div class="buttons-container">
-  <%= button_to 'Match', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-primary' %>
-    <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
-    <% if current_user.profile == @profile %>
-      <%= link_to "Editar Perfil", edit_profile_path(@profile), class: "btn btn-quinto" %>
-    <% end %>
-  </div>
-  </div>
+      <div class="buttons-container">
+        <% if current_user.profile != @profile %>
+        <%= button_to 'Send a message now', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-segundo' %>
+        <% end %>
+        <% if current_user.profile == @profile %>
+          <%= link_to "Edit your profile", edit_profile_path(@profile), class: "btn btn-edit" %>
+        <% end %>
+        <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
+      </div>
+    </div>
   </div>
 </section>
