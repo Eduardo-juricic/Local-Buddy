@@ -1,12 +1,112 @@
-.navbar-lewagon {
+.navbar-custom {
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: rgb(255, 255, 255);
+  padding: 8px 15px;
+  border-bottom: 2px solid #cdf2ff;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-custom .navbar-brand img {
+  width: 60px;
+  height: 60px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-custom .navbar-toggler {
+  border: none;
+  padding: 5px;
+  color: #f4f4f4;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  width: 35px;
+  height: 35px;
+  background-color: #f4f4f4;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #1369CB;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  background-color: #AFEBFF;
+}
+
+.navbar-custom .avatar {
+  width: 50px;
+  height: 50px;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: #1369CB;
+}
+
+.navbar-custom .avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  vertical-align: middle;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: #1369CB;
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #f4f4f4;
+  color: #1369CB;
+  font-weight: bold;
+}
+
+.navbar-custom .dropdown-item {
+  color: #1369CB;
+  font-weight: bold;
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 576px) {
+  .navbar-custom .navbar-nav {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-custom .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    font-size: 1rem;
+    display: block;
+  }
+}
+
+.navbar-nav-item-2 {
+  text-align: right;
+  display: block;
+  width: 100%;
+  font-size: 0.95rem;
 }

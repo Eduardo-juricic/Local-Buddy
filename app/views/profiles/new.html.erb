@@ -3,6 +3,7 @@
 <div class="card-form custom-card">
   <div class="card-body">
     <%= simple_form_for @profile, html: { class: "profile-form", multipart: true } do |f| %>
+
       <div class="form-input">
         <%= f.input :name, label: "Name", input_html: { class: 'custom-text-field' } %>
       </div>
