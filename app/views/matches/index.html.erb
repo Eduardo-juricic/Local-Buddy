@@ -2,7 +2,13 @@
 
 <% @matches.each do |match| %>
   <div class="match">
-    <p><strong>Profile_id:</strong> <%= match.profile.name %></p>
-    <p><strong>User_id:</strong> <%= match.user.name %></p>
+      <% if match.user == current_user %>
+        <%= match.profile.name %>
+      <% else %>
+        <% other_profile = Profile.find_by(user_id: match.user_id) %>
+        <%= other_profile.name if other_profile %>
+      <% end %>
+    </p>
     <%= link_to 'Chat', match_path(match), class: 'btn btn-primary' %>
+  </div>
 <% end %>
