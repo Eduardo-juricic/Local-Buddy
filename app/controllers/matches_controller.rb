@@ -2,7 +2,11 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
-    @message = Message.new
+    @messages = @match.messages
+  end
+
+  def index
+    @matches = Match.where("user_id = ? OR profile_id = ?", current_user.id, current_user.profile.id)
   end
 
   def create
