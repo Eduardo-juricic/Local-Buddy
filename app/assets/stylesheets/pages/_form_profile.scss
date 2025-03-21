@@ -1,9 +1,9 @@
 .card-form {
-  max-width: 320px; 
+  max-width: 320px;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: $white;
+  background-color: #f4f4f4;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   font-family: $body-font;
@@ -11,23 +11,17 @@
   flex-direction: column;
   align-items: center;
 
-  .card-body {
-    width: 100%;
+  .card-form-body {
     padding: 15px;
     background-color: $white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color:#003878;
+    align-items: center;
   }
 
-  .card-form h1 {
-    font-family: $headers-font;
-    font-size: 18px;
-    color: $blue;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  .card-form label {
+  .card-form l
+  abel {
     font-family: $subtitle-font;
     font-size: 12px;
     font-weight: 600;
@@ -35,16 +29,15 @@
     margin-bottom: 5px;
   }
 
-  .card-form input,
-  .card-form textarea,
-  .card-form select {
+  .card-form-input {
     padding: 8px;
-    border: 1px solid $light-gray;
+    border: 1px solid #f4f4f4;
     border-radius: 5px;
     font-size: 14px;
     font-family: $body-font;
     width: 100%;
     margin-bottom: 10px;
+    color: #003878;
   }
 
   .card-form textarea {
@@ -67,16 +60,38 @@
     height: 20px;
     transform: scale(0.8);
   }
-
-  .card-form .footer {
+  .btn-form {
+    color: #003878;
+    padding: 5px 10px;
+    border: 2px solid #1369CB;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
-    background-color: $light-gray;
-    color: $dark-gray;
-    padding: 10px 0;
-    text-align: center;
-    font-family: $body-font;
-    font-size: 14px;
-    position: relative;
-    margin-top: 20px;
+    display: block;
+
+    &:hover {
+      background-color: #7EB9FC;
+      color: white;
+    }
   }
+}
+.footer {
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+  margin-top: 20px;
+  color: #003878;
+  font-weight: bold;
+}
+
+.title-profile {
+  color: #003878;
+  font-size: 35px;
+  padding:20px;
+  text-align: center;
+  font-size: 2rem;
 }
