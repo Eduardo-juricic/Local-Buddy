@@ -8,7 +8,7 @@
   <% end %>
 </div>
 
-<%= simple_form_for [@match, Message.new], html: { class: 'd-flex' } do |f| %>
+<%= simple_form_for [@match, Message.new], html: {class: "d-flex", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" }} do |f| %>
   <div class="form-group">
     <%= f.input :content, placeholder: "Type your message" %>
     <%= f.submit "Send", class: "btn btn-primary" %>
