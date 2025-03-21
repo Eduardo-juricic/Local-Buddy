@@ -1,5 +1,5 @@
 .card-form {
-  max-width: 320px; // Limite de largura para a tela do iPhone 6/7/8
+  max-width: 320px; 
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -19,7 +19,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  h1 {
+  .card-form h1 {
     font-family: $headers-font;
     font-size: 18px;
     color: $blue;
@@ -27,7 +27,7 @@
     margin-bottom: 15px;
   }
 
-  label {
+  .card-form label {
     font-family: $subtitle-font;
     font-size: 12px;
     font-weight: 600;
@@ -35,7 +35,9 @@
     margin-bottom: 5px;
   }
 
-  input, textarea, select {
+  .card-form input,
+  .card-form textarea,
+  .card-form select {
     padding: 8px;
     border: 1px solid $light-gray;
     border-radius: 5px;
@@ -45,12 +47,12 @@
     margin-bottom: 10px;
   }
 
-  textarea {
+  .card-form textarea {
     resize: vertical;
     min-height: 80px;
   }
 
-  .checkbox-container {
+  .card-form .checkbox-container {
     display: flex;
     justify-content: flex-start;
     gap: 8px;
@@ -60,13 +62,13 @@
     }
   }
 
-  .custom-checkbox {
+  .card-form .custom-checkbox {
     width: 20px;
     height: 20px;
     transform: scale(0.8);
   }
 
-  .footer {
+  .card-form .footer {
     width: 100%;
     background-color: $light-gray;
     color: $dark-gray;

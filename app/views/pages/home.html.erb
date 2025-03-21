@@ -1,39 +1,67 @@
-<div class="baner text-center text-md-start">
+<div class="banner text-center text-md-start">
   <div class="container">
-    <h1 class="titulo">
-      Enchanting experiences, <br>with incredible locals
-    </h1>
-    <p class="lead text-muted">
-      Book unique and memorable travel experiences guided by locals.
+    <p><span class="titulo-home">Explore Cities,</span> <span class="titulo-home-2">Like a Locals</span></p>
+    <p class="titulo-home-3">
+      Discover authentic experiences guided by passionate locals.
     </p>
-
+  </div>
     <div class="search-box mx-auto">
       <%= form_with url: profiles_path, method: :get, class: "d-flex justify-content-center" do %>
         <div class="input-group">
           <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Where are you going?" %>
           <button class="btn btn-pesquisa" type="submit">
-            🔍 Search
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
       <% end %>
     </div>
-  </div>
-</div>
 
-<div class="container mt-5">
-  <h2 class="fw-bold">Go local in Charming Cities</h2>
-  <p class="text-muted">Find a private guided tour with one of our locals</p>
-
-  <div class="row g-3">
-    <% ["Bangkok", "Istanbul", "Amsterdam"].each do |city| %>
-      <div class="col-12 col-md-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title"><%= city %></h5>
-            <%= link_to 'Explore', '#', class: 'btn btn-explore' %>
-          </div>
+    <div id="carouselExample" class="carousel slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491318/rio-banner-2_pu4kup.jpg", class: "d-block w-100", alt: "Rio de Janeiro" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491317/lisboa-banner-1_iaoxol.jpg", class: "d-block w-100", alt: "Lisbon" %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491707/paris-banner-1_twj4ar.jpg", class: "d-block w-100", alt: "Paris" %>
         </div>
       </div>
-    <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
+</div>
+</div>
+<div class="container mt-5 custom-section-titulo">
+  <h2 class="fw-normal">Go local in Charming Cities</h2>
+  <p class="text-muted">Find personalized recommendations from passionate locals</p>
+</div>
+  <div class="row g-3">
+  <% images = {
+    "Rio de Janeiro" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503994/rio-card_aveyic.png",
+    "Lisbon" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503975/lisbon-card_kjnmat.png",
+    "Paris" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742504016/paris-card_yiis50.png"
+  } %>
+
+  <% ["Rio de Janeiro", "Lisbon", "Paris"].each do |city| %>
+    <div class="col-12 col-md-4">
+      <div class="card shadow-sm card-hover">
+        <div class="image-container">
+          <%= image_tag images[city], class: "card-img-top" %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= city %></h5>
+          <%= link_to 'Explore', '#', class: 'btn btn-explore' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
