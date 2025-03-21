@@ -5,6 +5,10 @@ class MatchesController < ApplicationController
     @message = Message.new
   end
 
+  def index
+    
+  end
+
   def create
     user = current_user
     profile = Profile.find(params[:profile_id])
