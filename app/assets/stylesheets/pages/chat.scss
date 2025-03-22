@@ -1,23 +1,80 @@
-.container-chat-message{
-  background-color: #F4F4F4;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 20px;
-  font-family: sans-serif;
-  box-sizing: border-box;
-  font-family: sans-serif;
+#messages {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adiciona um pequeno espaçamento entre as mensagens */
+}
+
+/* Mensagem comum */
+.message {
+  max-width: 75%;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 18px;
+  position: relative;
+  word-break: break-word;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
 }
 
-.body-chat-message {
-  padding: 5px 10px;
-  justify-content: space-between;
+/* Mensagens enviadas (lado direito e azul) */
+.sent {
+  align-self: flex-end; /* Alinha a mensagem à direita */
+  background-color: #007aff; /* Azul padrão iOS */
+  color: white;
+  border-bottom-right-radius: 18px;
+  border-top-right-radius: 18px;
+  text-align: right;
+  max-width: 85%; /* Limita a largura das mensagens enviadas */
 }
 
-.message{
-  background-color: #F4F4F4;
-  padding: 5px 10px;
-  justify-content: space-between;
+/* Mensagens recebidas (lado esquerdo e cinza claro) */
+.received {
+  align-self: flex-start; /* Alinha a mensagem à esquerda */
+  background-color: #ECEBEB; /* Cor para mensagens recebidas */
+  color: black;
+  border-bottom-left-radius: 18px;
+  border-top-left-radius: 18px;
+  text-align: left;
+  max-width: 85%; /* Limita a largura das mensagens recebidas */
+}
+
+/* Formulário fixado no rodapé */
+.form-group {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.btn-primary {
+  width: 70px;
+  height: 55px;
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/* Escondendo o label para o campo de input de conteúdo */
+label[for="message_content"] {
+  display: none;
 }
