@@ -18,16 +18,17 @@
 }
 
 .btn-segundo {
-  background-color: #2782EB;
-  color: #AFEBFF;
   padding: 5px 10px;
-  border: 2px solid #1369CB;
+  border: 2px solid #003878;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  display: block;
+  color: #003878;
 
   &:hover {
-    background-color: #66757F;
+    background-color: #7EB9FC;
     color: white;
   }
 }
@@ -67,15 +68,32 @@
 
 .btn-quinto {
   background-color: #7EB9FC;
-  color: #ffffff;
+  color: $white;
   padding: 5px 10px;
   border: 2px solid #7EB9FC;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  display: block;
 
   &:hover {
-    background-color: #66757F;
+    background-color: darken($light-blue, 10%);
+  }
+}
+
+.btn-edit {
+  padding: 5px 10px;
+  border: 2px solid #003878;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  display: block;
+  color: #003878;
+
+  &:hover {
+    background-color: #7EB9FC;
     color: white;
   }
 }
