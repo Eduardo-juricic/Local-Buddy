@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-custom">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "Logo.local.buddy.jpg", alt: "Home",  width: "80", height: "80" %>
+      <%= image_tag "local-buddy-logo.jpg", alt: "Home" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link home-link" %>
           </li>
-          
+
           <li class="nav-item">
   <div id="navbar-messages">
     <% if current_user.matches.any? || current_user.profile.matches.any? %>
