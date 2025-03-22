@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
-  before_action :set_match
   before_action :authenticate_user!
+  before_action :set_match
 
   def create
     @message = @match.messages.new(message_params)

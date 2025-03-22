@@ -1,13 +1,12 @@
 #messages {
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 180px);
   overflow-y: auto;
   padding: 5px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adiciona um pequeno espaçamento entre as mensagens */
+  gap: 10px;
 }
 
-/* Mensagem comum */
 .message {
   max-width: 75%;
   font-size: 14px;
@@ -20,29 +19,34 @@
   flex-direction: column;
 }
 
-/* Mensagens enviadas (lado direito e azul) */
 .sent {
-  align-self: flex-end; /* Alinha a mensagem à direita */
-  background-color: #007aff; /* Azul padrão iOS */
+  align-self: flex-end;
+  background-color: #007aff;
   color: white;
   border-bottom-right-radius: 18px;
   border-top-right-radius: 18px;
   text-align: right;
-  max-width: 85%; /* Limita a largura das mensagens enviadas */
+  max-width: 85%;
 }
 
-/* Mensagens recebidas (lado esquerdo e cinza claro) */
 .received {
-  align-self: flex-start; /* Alinha a mensagem à esquerda */
-  background-color: #ECEBEB; /* Cor para mensagens recebidas */
+  align-self: flex-start;
+  background-color: #ECEBEB;
   color: black;
   border-bottom-left-radius: 18px;
   border-top-left-radius: 18px;
   text-align: left;
-  max-width: 85%; /* Limita a largura das mensagens recebidas */
+  max-width: 85%;
 }
 
-/* Formulário fixado no rodapé */
+.message-info {
+  font-size: 10px;
+}
+
+.message-content {
+  margin-top: 5px;
+}
+
 .form-group {
   position: fixed;
   bottom: 0;
@@ -64,9 +68,11 @@ input[type="text"] {
   outline: none;
 }
 
-.btn-primary {
+.btn-send-chat {
   width: 70px;
   height: 55px;
+  background-color: #2782EB;
+  color: white;
   border-radius: 40%;
   display: flex;
   justify-content: center;
@@ -74,7 +80,19 @@ input[type="text"] {
   margin-left: 10px;
 }
 
-/* Escondendo o label para o campo de input de conteúdo */
+.btn-back-messages {
+  width: 70px;
+  height: 55px;
+  background-color: #7EB9FC;
+  color: white;
+  font-size: 13px;
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
 label[for="message_content"] {
   display: none;
 }
