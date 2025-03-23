@@ -10,12 +10,13 @@
 }
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 100px;
+  height: auto;
+  border-radius: 5%;
   object-fit: cover;
   display: block;
   margin: 0 auto 15px;
+  margin-bottom: 15px;
 }
 
 .profiles-list ul {
@@ -78,4 +79,13 @@
   p {
     font-size: 14px;
   }
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #ffff
 }

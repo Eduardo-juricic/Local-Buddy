@@ -17,7 +17,7 @@
 
           <li class="nav-item">
   <div id="navbar-messages">
-    <% if current_user.matches.any? || current_user.profile.matches.any? %>
+   <% if current_user && (current_user.matches.any? || current_user.profile&.matches&.any?) %>
       <%= link_to "Messages", matches_path, class: "nav-link" %>
     <% else %>
       <span class="nav-link">No Messages</span>
