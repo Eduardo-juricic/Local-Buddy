@@ -8,14 +8,16 @@
     color: #1369CB;
     font-size: 2rem;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 41px;
+    font-family: $headers-font;
   }
 
   .titulo-home-2 {
     color: #003878;
     font-size: 2rem;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 41px;
+    font-family: $headers-font;
   }
 
   .titulo-home-3 {
@@ -116,7 +118,7 @@
     transition: background-color 0.3s ease;
     width: 100%;
     align-self: stretch;
-    margin-top: auto; 
+    margin-top: auto;
 
     &:hover {
       background-color: #7EB9FC;

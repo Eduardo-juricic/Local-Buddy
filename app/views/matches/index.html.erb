@@ -1,7 +1,11 @@
-<h1>Meus Matches</h1>
+<h1>My Messages</h1>
 
 <% @matches.each do |match| %>
-  <div>
-    <%= link_to "Chat com #{match.other_user.name}", match_path(match) %>
-  </div>
+<% if match.user.profile.name == current_user.profile.name %>
+    <%= match.profile.profile.name %>
+
+<% else %>
+<%= match.user.profile.name %>
+<% end %>
+    <%= link_to 'Chat', match_path(match), class: 'btn btn-primary' %>
 <% end %>

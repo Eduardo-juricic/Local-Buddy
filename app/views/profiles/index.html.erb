@@ -1,8 +1,7 @@
-<h1 class="title">Profiles</h1>
-
+<h1 class="title-profile">Profiles</h1>
 <section class="profiles-listing">
 <div class="card-form custom-card">
-  <div class="card-body">
+  <div class="card-form-body">
   <ul>
     <% @profiles.each do |profile| %>
       <li>
@@ -14,7 +13,7 @@
           <p><strong>Location:</strong> <%= profile.city %>, <%= profile.country %></p>
           <p><strong>Language:</strong> <%= profile.language %></p>
           <div class="buttons-container">
-          <%= link_to "View Profile", profile_path(profile, query: params[:query]), class: "btn btn-quarto" %>
+          <%= link_to "View Profile", profile_path(profile, query: params[:query]), class: "btn btn-segundo" %>
         </div>
         </article>
       </li>
