@@ -1,5 +1,5 @@
 .card-form {
-  max-width: 320px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -18,11 +18,12 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color:#003878;
     align-items: center;
+    display: flex;
+    gap: 15px;
+    flex-direction: column; 
   }
 
-  .card-form l
-  abel {
-    font-family: $subtitle-font;
+  .card-form-   el {
     font-size: 12px;
     font-weight: 600;
     color: $dark-gray;
@@ -94,4 +95,12 @@
   padding:20px;
   text-align: center;
   font-size: 2rem;
+  display: block;
+  font-family: $headers-font;
+}
+
+@media (max-width: 767px) {
+  .card-form-body {
+    padding: 10px;
+  }
 }
