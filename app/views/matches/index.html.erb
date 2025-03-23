@@ -1,11 +1,21 @@
-<h1>My Messages</h1>
+<h1 class="matches-title">My Messages</h1>
 
 <% @matches.each do |match| %>
-<% if match.user.profile.name == current_user.profile.name %>
-    <%= match.profile.profile.name %>
+  <% if match.user.profile.name == current_user.profile.name %>
+    <% other_profile = match.profile.profile %>
+  <% else %>
+    <% other_profile = match.user.profile %>
+  <% end %>
 
-<% else %>
-<%= match.user.profile.name %>
-<% end %>
-    <%= link_to 'Chat', match_path(match), class: 'btn btn-primary' %>
+  <div class="match-index-card">
+    <div class="match-index-info">
+      <% if other_profile.photo.attached? %>
+        <%= image_tag other_profile.photo, class: 'match-index-photo' %>
+      <% else %>
+        <%= image_tag 'default-photo.png', class: 'match-index-photo' %>
+      <% end %>
+      <span class="match-index-name"><%= other_profile.name %></span>
+    </div>
+    <%= link_to 'Chat', match_path(match), class: 'btn btn-primary btn-index-chat' %>
+  </div>
 <% end %>
