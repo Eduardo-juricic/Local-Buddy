@@ -1,3 +1,12 @@
-<p>
-  <%= @content %>
-</p>
+<div class="trip-content">
+  <% formatted_content = @content
+      .gsub(/#+\s*(.*)/, '<h3>\1</h3>') # Transforma '# Título' em <h3>
+      .gsub(/\*\*(.*?)\*\*/, '<strong>\1</strong>') # Transforma '**Texto**' em <strong>Texto</strong>
+      .gsub(/\n-\s*\*(.*?)\*\*/, '<li><strong>\1</strong></li>') # Transforma '- *Item**' em <li><strong>Item</strong></li>
+      .gsub(/\n/, '<br>') # Adiciona quebras de linha
+  %>
+
+  <div class="content-box">
+    <%= raw formatted_content %>
+  </div>
+</div>
