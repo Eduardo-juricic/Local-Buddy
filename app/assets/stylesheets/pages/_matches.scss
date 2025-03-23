@@ -1,0 +1,51 @@
+.matches-title {
+  font-family: 'Lilita One', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #003878;
+}
+
+.match-index-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.match-index-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.match-index-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.match-index-name {
+  font-family: 'Lilita One', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-index-chat {
+  width: 70px;
+  height: 55px;
+  background-color: #7EB9FC;
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.match-index-name {
+  color: #003878;
+}
