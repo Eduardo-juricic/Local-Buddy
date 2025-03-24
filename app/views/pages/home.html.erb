@@ -64,4 +64,11 @@
       </div>
     </div>
   <% end %>
+
+<%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get do |f| %>
+  <div class="form-group mt-4 search-box">
+    <%= f.input :location, placeholder: "Para onde quer viajar?", label: false %>
+  </div>
+  <%= f.submit "Gerar Guia Turístico", class: "btn btn-primary" %>
+<% end %>
 </div>

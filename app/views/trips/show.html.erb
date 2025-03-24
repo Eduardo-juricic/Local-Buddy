@@ -1,0 +1,7 @@
+<div class="trip-content">
+<h1><%= @trip.name %></h1>
+<%= cl_image_tag @trip.photo.key, alt: "AI-generated image of the recipe", class: "w-100" if @trip.photo.attached? %>
+  <div class="content-box">
+    <%= @markdown.render(@trip.content).html_safe %>
+  </div>
+</div>
