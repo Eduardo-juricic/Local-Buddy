@@ -200,7 +200,7 @@ profile10 = Profile.create!(
   user: user10
 )
 file10 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/t_perfil4/v1742153528/vince-veras-AJIqZDAUD7A-unsplash_gk5upv_gcwqsz.png").open
-profile10.photo.attach(io: file10, filename: "perfil2.jpg", content_type: "image/jpg")
+profile10.photo.attach(io: file10, filename: "perfil2.png", content_type: "image/png")
 profile10.save
 puts "user 10 created"
 
@@ -388,101 +388,101 @@ puts "user 19 created"
 puts "creating user 20"
 user20 = User.create!(email: 'user5@portugal.com', password: 'password', password_confirmation: 'password')
 profile20 = Profile.create!(
-  name: 'Helena Martins',
-  bio: 'I am Helena, a photographer who loves capturing the essence of Lisbon. I enjoy exploring the city’s markets and photographing local life.',
+  name: 'Antônio Costa',
+  bio: 'I am João, a passionate photographer who loves capturing Lisbon’s beauty through my lens. I enjoy outdoor activities and good food.',
   country: 'Portugal',
   city: 'Lisbon',
-  traveler: false,
-  preferences: 'Photography, Culture, City Life',
-  food: 'Pastel de Nata',
-  animal: 'Cat',
+  traveler: true,
+  preferences: 'Photography, Outdoor Activities, Food',
+  food: 'Sardinhas',
+  animal: 'Dog',
   availability: 'Available on weekends',
   language: 'Portuguese, English',
   user: user20
 )
-file20 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826436/karsten-winegeart-lxX_sQ6aNJ8-unsplash-_jkq7zh.jpg")
-profile20.photo.attach(io: file20, filename: "perfil20.jpg", content_type: "image/jpg")
+file20 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826786/nenad-protic-LMudNyqjqJU-unsplash-1_eysmuw.jpg").open
+profile20.photo.attach(io: file20, filename: "perfil5.jpg", content_type: "image/jpg")
 profile20.save
 puts "user 20 created"
 
-# puts "creating user 21"
-# user21 = User.create!(email: 'user6@portugal.com', password: 'password', password_confirmation: 'password')
-# profile21 = Profile.create!(
-#   name: 'Miguel Costa',
-#   bio: 'I am Miguel, a history enthusiast and lover of Lisbon’s old buildings. I love visiting historic sites and learning more about the city’s past.',
-#   country: 'Portugal',
-#   city: 'Lisbon',
-#   traveler: false,
-#   preferences: 'History, Architecture, Museums',
-#   food: 'Francesinha',
-#   animal: 'Dog',
-#   availability: 'Available on weekdays',
-#   language: 'Portuguese, Spanish',
-#   user: user21
-# )
-# file21 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826786/nenad-protic-LMudNyqjqJU-unsplash-1_eysmuw.jpg")
-# profile21.photo.attach(io: file21, filename: "perfil1.jpg", content_type: "image/jpg")
-# profile21.save
-# puts "user 21 created"
+puts "creating user 21"
+user21 = User.create!(email: 'user6@portugal.com', password: 'password', password_confirmation: 'password')
+profile21 = Profile.create!(
+  name: 'Ana Martins',
+  bio: 'I am Ana, a passionate traveler who loves exploring Lisbon’s streets and museums. I also enjoy cooking traditional Portuguese dishes.',
+  country: 'Portugal',
+  city: 'Lisbon',
+  traveler: true,
+  preferences: 'Traveling, Cooking, Museums',
+  food: 'Bacalhau à Brás',
+  animal: 'Cat',
+  availability: 'Available on weekdays',
+  language: 'Portuguese, Spanish, English',
+  user: user21
+)
+file21 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826435/bethany-beck-3Ls96Qlfc-4-unsplash-1_fjc09d.jpg").open
+profile21.photo.attach(io: file21, filename: "perfil6.jpg", content_type: "image/jpg")
+profile21.save
+puts "user 21 created"
 
-# puts "creating user 22"
-# user22 = User.create!(email: 'user4@france.com', password: 'password', password_confirmation: 'password')
-# profile22 = Profile.create!(
-#   name: 'Lucas Dupont',
-#   bio: 'I am Lucas, a lover of modern art and local cafes. I enjoy visiting museums and discovering new art exhibitions around Paris.',
-#   country: 'France',
-#   city: 'Paris',
-#   traveler: false,
-#   preferences: 'Art, Museums, Cafes',
-#   food: 'Croissant',
-#   animal: 'Cat',
-#   availability: 'Available on weekends',
-#   language: 'French, English',
-#   user: user22
-# )
-# file22 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742827265/lala-azizli-Vy8qEGOJ2GI-unsplash-_kkaglq.jpg")
-# profile22.photo.attach(io: file22, filename: "perfil22.jpg", content_type: "image/jpg")
-# profile22.save
-# puts "user 22 created"
+puts "creating user 22"
+user22 = User.create!(email: 'user7@brazil.com', password: 'password', password_confirmation: 'password')
+profile22 = Profile.create!(
+  name: 'Joãp Oliveira',
+  bio: 'I am Carlos, a local guide in Rio de Janeiro. I enjoy taking tourists around the city, showing them the best spots to visit and hidden gems.',
+  country: 'Brazil',
+  city: 'Rio de Janeiro',
+  traveler: false,
+  preferences: 'Guided Tours, History, Photography',
+  food: 'Feijoada',
+  animal: 'Parrot',
+  availability: 'Available on weekends',
+  language: 'Portuguese, English',
+  user: user22
+)
+file22 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742827265/lala-azizli-Vy8qEGOJ2GI-unsplash-_kkaglq.jpg").open
+profile22.photo.attach(io: file22, filename: "perfil7.jpg", content_type: "image/jpg")
+profile22.save
+puts "user 22 created"
 
-# puts "creating user 23"
-# user23 = User.create!(email: 'user5@france.com', password: 'password', password_confirmation: 'password')
-# profile23 = Profile.create!(
-#   name: 'Marie Lefevre',
-#   bio: 'I am Marie, a passionate traveler who loves exploring Parisian markets and tasting local pastries. I enjoy finding unique places in the city.',
-#   country: 'France',
-#   city: 'Paris',
-#   traveler: false,
-#   preferences: 'Markets, Pastries, Photography',
-#   food: 'Macaron',
-#   animal: 'Bird',
-#   availability: 'Available on weekdays',
-#   language: 'French, English',
-#   user: user23
-# )
-# file23 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826446/mathilde-lmd-D1htwm6OqJA-unsplash-1_wwkote.jpg")
-# profile23.photo.attach(io: file23, filename: "perfil23.jpg", content_type: "image/jpg")
-# profile23.save
-# puts "user 23 created"
+puts "creating user 23"
+user23 = User.create!(email: 'user8@brazil.com', password: 'password', password_confirmation: 'password')
+profile23 = Profile.create!(
+  name: 'Mariana Souza',
+  bio: 'I am Mariana, an artist and nature lover. I spend my days exploring Rio’s parks and painting landscapes inspired by the city’s beauty.',
+  country: 'Brazil',
+  city: 'Rio de Janeiro',
+  traveler: true,
+  preferences: 'Art, Nature, Outdoor Activities',
+  food: 'Pão de Queijo',
+  animal: 'Monkey',
+  availability: 'Available on weekdays',
+  language: 'Portuguese, English',
+  user: user23
+)
+file23 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742825017/marcin-jozwiak-FqwTkk_TO80-unsplash-1_huubwr.jpg").open
+profile23.photo.attach(io: file23, filename: "perfil8.jpg", content_type: "image/jpg")
+profile23.save
+puts "user 23 created"
 
-# puts "creating user 24"
-# user24 = User.create!(email: 'user6@france.com', password: 'password', password_confirmation: 'password')
-# profile24 = Profile.create!(
-#   name: 'Sophie Martin',
-#   bio: 'I am Sophie, a fan of Parisian life and fashion. I enjoy shopping in boutiques and walking through the elegant streets of Paris.',
-#   country: 'France',
-#   city: 'Paris',
-#   traveler: false,
-#   preferences: 'Fashion, Shopping, City Life',
-#   food: 'Quiche Lorraine',
-#   animal: 'Dog',
-#   availability: 'Available on weekends',
-#   language: 'French, Spanish',
-#   user: user24
-# )
-# file24 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826448/michele-bergami-z8lKZwlHvdM-unsplash-_bbftnw.jpg")
-# profile24.photo.attach(io: file24, filename: "perfil24.jpg", content_type: "image/jpg")
-# profile24.save
-# puts "user 24 created"
+puts "creating user 24"
+user24 = User.create!(email: 'user9@france.com', password: 'password', password_confirmation: 'password')
+profile24 = Profile.create!(
+  name: 'Élise Durand',
+  bio: 'I am Élise, a history enthusiast and a proud Parisian. I love exploring museums, visiting old bookstores, and enjoying a café with a good book.',
+  country: 'France',
+  city: 'Paris',
+  traveler: false,
+  preferences: 'History, Books, Cafés',
+  food: 'Croissant',
+  animal: 'Cat',
+  availability: 'Available on weekends',
+  language: 'French, English',
+  user: user24
+)
+file24 = URI.parse("https://res.cloudinary.com/dslrqpyd7/image/upload/v1742826448/michele-bergami-z8lKZwlHvdM-unsplash-_bbftnw.jpg").open
+profile24.photo.attach(io: file24, filename: "perfil9.jpg", content_type: "image/jpg")
+profile24.save
+puts "user 24 created"
 
 puts "All users and profiles created successfully!"
