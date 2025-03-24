@@ -428,7 +428,7 @@ puts "user 21 created"
 puts "creating user 22"
 user22 = User.create!(email: 'user7@brazil.com', password: 'password', password_confirmation: 'password')
 profile22 = Profile.create!(
-  name: 'Joãp Oliveira',
+  name: 'João Oliveira',
   bio: 'I am Carlos, a local guide in Rio de Janeiro. I enjoy taking tourists around the city, showing them the best spots to visit and hidden gems.',
   country: 'Brazil',
   city: 'Rio de Janeiro',
