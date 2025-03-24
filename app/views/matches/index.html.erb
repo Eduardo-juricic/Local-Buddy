@@ -2,20 +2,20 @@
 
 <% @matches.each do |match| %>
   <% if match.user.profile.name == current_user.profile.name %>
-    <% other_profile = match.profile.profile %>
+    <% other_profile = match.profile %>
   <% else %>
-    <% other_profile = match.user.profile %>
+    <% other_profile = match.user %>
   <% end %>
 
   <div class="match-index-card">
     <div class="match-index-info">
-      <% if other_profile.photo.attached? %>
-        <%= image_tag other_profile.photo, class: 'match-index-photo' %>
+      <% if other_profile.profile.photo.attached? %>
+        <%= image_tag other_profile.profile.photo, class: 'match-index-photo' %>
       <% else %>
-        <%= image_tag 'default-photo.png', class: 'match-index-photo' %>
+        <i class="fa-solid fa-circle-user icon match-index-photo"></i>
       <% end %>
-      <span class="match-index-name"><%= other_profile.name %></span>
+      <span class="match-index-name"><%= other_profile.profile.name %></span>
     </div>
-    <%= link_to 'Chat', match_path(match), class: 'btn btn-primary btn-index-chat' %>
+    <%= link_to 'Chat', match_path(match), class: 'btn btn-segundo' %>
   </div>
 <% end %>
