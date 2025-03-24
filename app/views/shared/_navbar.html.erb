@@ -13,8 +13,8 @@
             <%= link_to "Home", root_path, class: "nav-link home-link" %>
           </li>
           <li class="nav-item">
-            <div id="navbar-messages">1
-              <% if current_user.matches.any? || current_user.profile.matches.any? %>
+            <div id="navbar-messages">
+              <% if current_user.matches.any? || current_user.profile&.matches&.any? %>
                 <%= link_to "Messages", matches_path, class: "nav-link" %>
               <% else %>
                 <span class="nav-link">No Messages</span>

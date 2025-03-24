@@ -17,8 +17,7 @@
       <div class="buttons-container d-flex gap-2">
         <% if current_user.profile != @profile %>
           <%= button_to 'Send a message', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-segundo' %>
-        <% end %>
-        <% if current_user.profile == @profile %>
+        <% else %>
           <%= link_to "Edit your profile", edit_profile_path(@profile), class: "btn btn-segundo" %>
         <% end %>
         <%= link_to 'Back to profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>

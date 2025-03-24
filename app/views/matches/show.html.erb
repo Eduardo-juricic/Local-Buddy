@@ -1,5 +1,19 @@
-<%= turbo_stream_from "match_#{@match.id}_messages" %>
-
+<div class="header-chat">
+  <%= link_to matches_path, class: "btn-back-messages" do %>
+    <i class="fa-solid fa-circle-chevron-left"></i>
+  <% end %>
+  <% user_profile = current_user.profile %>
+  <% other_profile = @match.profile.profile == user_profile ? @match.user.profile : @match.profile.profile %>
+  <div class="message-profile-photo">
+    <% if other_profile.photo.attached? %>
+      <%= image_tag other_profile.photo, class: 'match-index-photo' %>
+    <% else %>
+      <i class="fa-solid fa-circle-user icon match-index-photo"></i>
+    <% end %>
+    <div class="name"><%= other_profile.name %></div>
+  </div>
+  <%= turbo_stream_from "match_#{@match.id}_messages" %>
+</div>
 <div id="messages">
   <%= turbo_frame_tag :messages do %>
     <% @messages.each do |message| %>
@@ -7,13 +21,11 @@
     <% end %>
   <% end %>
 </div>
-
 <%= simple_form_for [@match, Message.new], html: { class: "d-flex", data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } } do |f| %>
-  <div class="form-group">
-    <%= f.input :content, placeholder: "Type your message" %>
-    <%= f.submit "Send", class: "btn btn-send-chat" %>
-    <%= link_to matches_path, class: "btn btn-back-messages" do %>
-      Messages
-    <% end %>
+  <div class="form-group-message">
+    <%= f.text_field :content, placeholder: "Type your message", class: "input-message" %>
+    <button type="submit" class="btn-send-chat">
+      <i class="fa-solid fa-circle-right"></i>
+    </button>
   </div>
 <% end %>

@@ -21,78 +21,134 @@
 
 .sent {
   align-self: flex-end;
-  background-color: #007aff;
+  background-color: #003878;
   color: white;
-  border-bottom-right-radius: 18px;
-  border-top-right-radius: 18px;
+  border-radius: 18px 18px 0 18px;
   text-align: right;
   max-width: 85%;
 }
 
 .received {
   align-self: flex-start;
-  background-color: #ECEBEB;
-  color: black;
-  border-bottom-left-radius: 18px;
-  border-top-left-radius: 18px;
+  background-color: white;
+  color: #003878;
+  border-radius: 18px 18px 18px 0;
   text-align: left;
   max-width: 85%;
 }
 
-.message-info {
-  font-size: 10px;
-}
 
-.message-content {
-  margin-top: 5px;
-}
-
-.form-group {
+.form-group-message {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background-color: white;
-  padding: 8px;
+  padding: 10px;
   display: flex;
   align-items: center;
   border-top: 1px solid #ddd;
+  z-index: 100;
 }
 
-input[type="text"] {
+.input-message {
   flex-grow: 1;
   font-size: 14px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 20px;
   outline: none;
+  margin-right: 10px;
+  width: 100%;
 }
 
 .btn-send-chat {
-  width: 70px;
+  width: 55px;
   height: 55px;
-  background-color: #2782EB;
-  color: white;
-  border-radius: 40%;
+  color: #003878;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 10px;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
 }
 
-.btn-back-messages {
-  width: 70px;
-  height: 55px;
-  background-color: #7EB9FC;
-  color: white;
-  font-size: 13px;
-  border-radius: 40%;
+.btn-send-chat i {
+  font-size: 35px;
+}
+
+.message-profile-photo {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-left: 10px;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
-label[for="message_content"] {
-  display: none;
+.match-index-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 30%;
+  display: block;
+}
+
+.header-chat {
+  background-color: #FFF;
+  height: 60px;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.100);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.header-chat .btn-back-messages {
+  display: flex;
+  align-items: center;
+  color: #003878;
+  font-size: 35px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header-chat .name {
+  font-family: 'Lilita One', sans-serif;
+  color: #003878;
+  text-transform: capitalize;
+  font-size: 16pt;
+  display: block;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .form-group-message {
+    padding: 8px;
+  }
+
+  .input-message {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .btn-send-chat {
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .input-message {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .btn-send-chat {
+    width: 45px;
+    height: 45px;
+    font-size: 35px;
+  }
 }
