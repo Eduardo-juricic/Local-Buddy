@@ -1,12 +1,7 @@
 <div class="trip-content">
-  <% formatted_content = @content
-      .gsub(/#+\s*(.*)/, '<h3>\1</h3>') # Transforma '# Título' em <h3>
-      .gsub(/\*\*(.*?)\*\*/, '<strong>\1</strong>') # Transforma '**Texto**' em <strong>Texto</strong>
-      .gsub(/\n-\s*\*(.*?)\*\*/, '<li><strong>\1</strong></li>') # Transforma '- *Item**' em <li><strong>Item</strong></li>
-      .gsub(/\n/, '<br>') # Adiciona quebras de linha
-  %>
-
+<h1><%= @trip.name %></h1>
+<%= cl_image_tag @trip.photo.key, alt: "AI-generated image of the recipe", class: "w-100" if @trip.photo.attached? %>
   <div class="content-box">
-    <%= raw formatted_content %>
+    <%= @markdown.render(@trip.content).html_safe %>
   </div>
 </div>
