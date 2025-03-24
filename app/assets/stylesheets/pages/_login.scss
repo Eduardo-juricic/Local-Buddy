@@ -1,0 +1,70 @@
+.login-title {
+  color: $dark-blue;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-inputs {
+  margin-bottom: 20px;
+
+  .form-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    color: $dark-blue;
+    background-color: $white;
+    margin-bottom: 10px;
+
+    &:focus {
+      border-color: $blue;
+      outline: none;
+    }
+  }
+
+  .remember-me {
+    color: $dark-blue;
+  }
+}
+
+.form-actions {
+  text-align: center;
+
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: $blue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $light-blue;
+    }
+  }
+}
+
+.devise-links {
+  text-align: center;
+  margin-top: 20px;
+
+  a {
+    color: $blue;
+    text-decoration: none;
+    margin: 0 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.logo-image {
+  width: 200px;
+  height: auto;  
+}

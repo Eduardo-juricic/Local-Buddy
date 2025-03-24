@@ -14,16 +14,18 @@
       <p><strong>Animal:</strong> <%= @profile.animal %></p>
       <p><strong>Availability:</strong> <%= @profile.availability ? 'Available' : 'Not Available' %></p>
       <p><strong>Language:</strong> <%= @profile.language %></p>
-
-      <div class="buttons-container">
+      <div class="buttons-container d-flex gap-2">
         <% if current_user.profile != @profile %>
-        <%= button_to 'Send a message now', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-segundo' %>
+          <%= button_to 'Send a message', matches_path(profile_id: @profile.id), method: :post, class: 'btn btn-segundo' %>
         <% end %>
         <% if current_user.profile == @profile %>
-          <%= link_to "Edit your profile", edit_profile_path(@profile), class: "btn btn-edit" %>
+          <%= link_to "Edit your profile", edit_profile_path(@profile), class: "btn btn-segundo" %>
         <% end %>
-        <%= link_to 'Back to Profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
+        <%= link_to 'Back to profiles', profiles_path(query: params[:query]), class: "btn btn-segundo" %>
       </div>
     </div>
   </div>
 </section>
+<footer class="footer">
+  <p>&copy; 2025 Local Buddy. All rights reserved. </p>
+</footer>
