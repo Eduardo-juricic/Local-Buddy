@@ -13,7 +13,7 @@ class Trip < ApplicationRecord
     client = OpenAI::Client.new
     chatgpt_response = client.chat(parameters: {
       model: "gpt-4o-mini",
-      messages: [{ role: "user", content: "Me forneça um guia turístico detalhado incluindo restaurantes, cafeterias, pontos turísticos e tudo que haja de interessante para um turista para este lugar: #{name}. Não esqueça de me dar o endereço dos lugares que vc mencionar, e nao precisa responder com: calro! ou aqui esta... etc. Apenas me de o guia turistico"}]
+      messages: [{ role: "user", content: "Provide a detailed travel guide including restaurants, cafes, tourist attractions, and everything interesting for a tourist in this place: #{name}. Make sure to include the address of each location mentioned, and there's no need to start with phrases like 'Sure!' or 'Here it is...'. Just provide the travel guide."}]
     })
     new_content = chatgpt_response["choices"][0]["message"]["content"]
 
