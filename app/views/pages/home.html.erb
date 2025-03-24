@@ -65,10 +65,14 @@
     </div>
   <% end %>
 
-<%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get do |f| %>
-  <div class="form-group mt-4 search-box">
-    <%= f.input :location, placeholder: "Para onde quer viajar?", label: false %>
+<div class="d-flex justify-content-center">
+<%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get, html: { class: "search-form" } do |f| %>
+  <div class="input-group mt-4">
+    <%= f.input :location, placeholder: "Where do you want to travel?", label: false, input_html: { class: "form-control", autocomplete: "off" } %>
+    <div class="input-group-append">
+      <%= f.submit "🔍", class: "btn btn-primary" %>
+    </div>
   </div>
-  <%= f.submit "Gerar Guia Turístico", class: "btn btn-primary" %>
 <% end %>
+</div>
 </div>
