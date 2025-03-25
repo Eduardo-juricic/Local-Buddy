@@ -77,6 +77,36 @@
     <% end %>
   </div>
 </div>
+<div class="banner-vantagens text-center">
+  <h2 class="banner-title">Why should you use LocalBuddy?</h2>
+
+  <div class="row justify-content-center">
+    <% images = {
+      "Authentic connection with locals" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742907423/high-five_zjxz2d.png",
+      "Free" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742907423/free_mlcipb.png",
+      "Artificial Intelligence" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742907423/artificial-intelligence_l1dvzg.png"
+    } %>
+
+    <% descriptions = {
+      "Authentic connection with locals" => "Tourists connect with locals for more genuine, personalized experiences.",
+      "Free" => "Locals offer tours and tips at no cost, making the experience accessible.",
+      "Artificial Intelligence" => "We use AI to generate personalized travel itineraries."
+    } %>
+
+    <% images.each do |title, url| %>
+      <div class="col-12 col-md-4">
+        <div class="card-vantagem">
+          <div class="image-container">
+            <%= image_tag url, class: "vantagem-icon" %>
+          </div>
+          <h5 class="vantagem-title"><%= title %></h5>
+          <p class="vantagem-text"><%= descriptions[title] %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+ </div>
+ 
 <footer class="footer">
   <p>&copy; 2025 Local Buddy. All rights reserved. </p>
 </footer>
