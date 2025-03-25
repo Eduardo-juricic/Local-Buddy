@@ -89,3 +89,38 @@
   border: 1px solid #ddd;
   background-color: #ffff
 }
+
+
+.content-box {
+  font-family: 'Roboto', sans-serif;
+  color: #003878;
+}
+.card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 340px;
+}
+
+.title-trip {
+  font-family: 'Lilita One', sans-serif;
+  color: #003878;
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+body {
+  background-color: #E0F7FA;
+  transition: background-color 0.5s ease;
+}
+
+.trip-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 600px;      
+  margin-bottom: 20px;
+}

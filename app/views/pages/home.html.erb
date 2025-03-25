@@ -108,6 +108,28 @@
   </div>
  </div>
 
+<div class="row g-3 mb-5">
+  <% images = {
+    "Barcelona" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/panoramic-view-barcelona-multiple-building-s-roofs-view-from-parc-guell-spain-2_wdmv3e.jpg",
+    "Buenos Aires" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/gustavo-sanchez-j1Yx11T0UI0-unsplash-2_ksfffk.jpg",
+    "Milan" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/view-front-milan-cathedral-milan-is-second-most-populous-city-italy-capital-lombardy-2_jedere.jpg"
+  } %>
+  <% ["Barcelona", "Buenos Aires", "Milan"].each do |city| %>
+    <div class="col-12 col-md-4">
+      <div class="card shadow-sm card-hover">
+        <div class="image-container">
+          <%= image_tag images[city], class: "card-img-top" %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= city %></h5>
+          <%= link_to 'Explore', trip_path(id: "generated", trip: { location: city }), method: :get, class: 'btn btn-explore' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <footer class="footer">
   <p>&copy; 2025 Local Buddy. All rights reserved. </p>
+  <p>&copy; Created by Amanda Arruda, Amanda Miquelino and Eduardo Juricic. </p>
 </footer>
