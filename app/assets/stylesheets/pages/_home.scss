@@ -1,5 +1,5 @@
 .banner {
-  padding: 50px 15px;
+  padding: 50px 0px;
   background-color: #f4f4f4;
   border-radius: 10px;
   text-align: center;
@@ -134,4 +134,47 @@
       background-color: #7EB9FC;
     }
 }
+}
+banner-img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.search-section-chat {
+  position: relative;
+  background: url('<%= image_path("guide.png") %>') no-repeat center center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+.search-overlay-chat {
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.search-form-chat .form-control-chat {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .search-section-chat {
+    height: 300px;
+    text-align: center;
+  }
+  .search-overlay-chat {
+    max-width: 90%;
+    text-align: center;
+  }
 }

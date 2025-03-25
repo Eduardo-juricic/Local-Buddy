@@ -1,56 +1,56 @@
 <div class="banner text-center text-md-start">
   <div class="container">
-    <p><span class="title-home">Explore Cities,</span> <span class="title-home-2">Like a Local</span></p>
-    <p class="title-home-3">
-      Discover authentic experiences guided by passionate locals.
-    </p>
-  </div>
-    <div class="search-box mx-auto">
-      <%= form_with url: profiles_path, method: :get, class: "d-flex justify-content-center" do %>
-        <div class="input-group">
-          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Where are you going?" %>
-          <button class="btn btn-pesquisa" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-      <% end %>
-    </div>
-
-    <div id="carouselExample" class="carousel slide mt-5" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491318/rio-banner-2_pu4kup.jpg", class: "d-block w-100", alt: "Rio de Janeiro" %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491317/lisboa-banner-1_iaoxol.jpg", class: "d-block w-100", alt: "Lisbon" %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491707/paris-banner-1_twj4ar.jpg", class: "d-block w-100", alt: "Paris" %>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p><span class="title-home">Explore Cities,</span> <span class="title-home-2">Like a Local</span></p>
+        <p class="title-home-3">
+          Discover authentic experiences guided by passionate locals.
+        </p>
+        <div class="search-box mx-auto">
+          <%= form_with url: profiles_path, method: :get, class: "d-flex justify-content-center" do %>
+            <div class="input-group">
+              <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Where are you going?" %>
+              <button class="btn btn-pesquisa" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          <% end %>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </div>
 </div>
+<div id="carouselExample" class="carousel slide mt-5" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491318/rio-banner-2_pu4kup.jpg", class: "d-block w-100", alt: "Rio de Janeiro" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491317/lisboa-banner-1_iaoxol.jpg", class: "d-block w-100", alt: "Lisbon" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742491707/paris-banner-1_twj4ar.jpg", class: "d-block w-100", alt: "Paris" %>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 <div class="container mt-5 custom-section-title">
   <h2 class="title-home-2">Go local in Charming Cities</h2>
   <p class="title-home-3">Find personalized recommendations from passionate locals</p>
 </div>
-  <div class="row g-3">
+<div class="row g-3 mb-5">
   <% images = {
     "Rio de Janeiro" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503994/rio-card_aveyic.png",
     "Lisbon" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503975/lisbon-card_kjnmat.png",
     "Paris" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742504016/paris-card_yiis50.png"
   } %>
-
   <% ["Rio de Janeiro", "Lisbon", "Paris"].each do |city| %>
     <div class="col-12 col-md-4">
       <div class="card shadow-sm card-hover">
@@ -59,20 +59,24 @@
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= city %></h5>
-          <%= link_to 'Explore', '#', class: 'btn btn-explore' %>
+          <%= link_to 'Explore', profiles_path(query: city), class: 'btn btn-explore' %>
         </div>
       </div>
     </div>
   <% end %>
-
-<div class="d-flex justify-content-center">
-<%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get, html: { class: "search-form" } do |f| %>
-  <div class="input-group mt-4">
-    <%= f.input :location, placeholder: "Where do you want to travel?", label: false, input_html: { class: "form-control", autocomplete: "off" } %>
-    <div class="input-group-append">
-      <%= f.submit "🔍", class: "btn btn-primary" %>
-    </div>
+</div>
+<div class="search-section-chat" style="background: url('https://res.cloudinary.com/dslrqpyd7/image/upload/v1742910350/guide_zhzjb8.png') no-repeat center center; background-size: cover; height: 400px;">
+  <div class="search-overlay-chat">
+    <%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get, html: { class: "search-form-chat" } do |f| %>
+      <div class="input-group">
+        <%= f.input :location, placeholder: "Search your destination", label: false, input_html: { class: "form-control form-control-chat", autocomplete: "off" } %>
+        <div class="input-group-append">
+          <%= f.submit "🔍", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
 </div>
-</div>
+<footer class="footer">
+  <p>&copy; 2025 Local Buddy. All rights reserved. </p>
+</footer>
