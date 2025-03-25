@@ -59,7 +59,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= city %></h5>
-          <%= link_to 'Explore', profiles_path(query: city), class: 'btn btn-explore' %>
+          <%= link_to 'Explore', trip_path(id: "generated", trip: { location: city }), method: :get, class: 'btn btn-explore' %>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
     <% end %>
   </div>
  </div>
- 
+
 <footer class="footer">
   <p>&copy; 2025 Local Buddy. All rights reserved. </p>
 </footer>
