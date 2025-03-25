@@ -178,3 +178,58 @@ banner-img {
     text-align: center;
   }
 }
+
+.banner-vantagens {
+  background-color: #003878;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 20px;
+
+  .banner-title {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .card-vantagem {
+    max-width: 320px;
+    margin: 0 auto 30px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .vantagem-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .vantagem-title {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 20px;
+    color: #AFEBFF;
+    margin-bottom: 10px;
+  }
+
+  .vantagem-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: white;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .vantagem-title {
+    font-size: 22px;
+  }
+
+  .vantagem-text {
+    font-size: 18px;
+  }
+}
