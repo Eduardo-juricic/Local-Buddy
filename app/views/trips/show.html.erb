@@ -1,13 +1,14 @@
 <div class="trip-content">
-<div class="card">
-<div class="title-trip">
-<h1><%= @trip.name %></h1>
-</div>
-<%= cl_image_tag @trip.photo.key, alt: "AI-generated image of the recipe", class: "trip-image" if @trip.photo.attached? %>
-  <div class="content-box">
-    <%= @markdown.render(@trip.content).html_safe %>
+  <div class="card">
+    <div class="title-trip">
+      <h1><%= @trip.name %></h1>
+    </div>
+    <%= cl_image_tag @trip.photo.key, alt: "AI-generated image of the recipe", class: "trip-image" if @trip.photo.attached? %>
+    <div class="content-box">
+      <%= @markdown.render(@trip.content).html_safe %>
+    </div>
+    <%= link_to "Back to home", root_path, class: "btn btn-segundo" %>
   </div>
-</div>
 </div>
 <footer class="footer">
   <p>&copy; 2025 Local Buddy. All rights reserved. </p>
