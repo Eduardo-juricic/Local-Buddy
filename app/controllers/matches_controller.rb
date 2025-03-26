@@ -13,11 +13,11 @@ class MatchesController < ApplicationController
     user = current_user
     profile = Profile.find(params[:profile_id])
     current_profile = Profile.find_by(user_id: user)
-    @match = Match.find_by(user_id: current_profile, profile_id: profile.user_id) || Match.find_by(user_id: profile.user_id, profile_id: current_profile)
+    @match = Match.find_by(user_id: current_profile, profile_id: profile.user_id) || Match.find_by(user_id: profile.user_id, profile_id: user.id)
     if @match
       redirect_to match_path(@match), notice: 'Match already exists.'
     else
-      @match = Match.create(user_id: user.id, profile_id: profile.id)
+      @match = Match.create(user_id: user.id, profile_id: profile.user.id)
       if @match.persisted?
         redirect_to match_path(@match), notice: 'Match created successfully.'
       else
