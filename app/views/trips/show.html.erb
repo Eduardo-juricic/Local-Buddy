@@ -3,14 +3,26 @@
     <div class="title-trip">
       <h1><%= @trip.name %></h1>
     </div>
-    <%= cl_image_tag @trip.photo.key, alt: "AI-generated image of the recipe", class: "trip-image" if @trip.photo.attached? %>
+
+    <% if @trip.photo.attached? && @trip.photo.key.present? %>
+      <%= cl_image_tag @trip.photo.key, alt: "AI-generated image of the trip", class: "trip-image" %>
+    <% else %>
+      <p>📷 Imagem em processamento... Tente recarregar a página em alguns instantes.</p>
+    <% end %>
+
     <div class="content-box">
-      <%= @markdown.render(@trip.content).html_safe %>
+      <% if @trip.content.present? %>
+        <%= @markdown.render(@trip.content).html_safe %>
+      <% else %>
+        <p>📝 Roteiro em processamento... Tente recarregar a página em alguns instantes.</p>
+      <% end %>
     </div>
+
     <%= link_to "Back to home", root_path, class: "btn btn-segundo" %>
   </div>
 </div>
+
 <footer class="footer">
-  <p>&copy; 2025 Local Buddy. All rights reserved. </p>
-  <p>&copy; Created by Amanda Arruda, Amanda Miquelino and Eduardo Juricic. </p>
+  <p>&copy; 2025 Local Buddy. All rights reserved.</p>
+  <p>Created by Amanda Arruda, Amanda Miquelino, and Eduardo Juricic.</p>
 </footer>
