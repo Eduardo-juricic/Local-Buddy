@@ -1,8 +1,11 @@
-<div class="banner text-center text-md-start">
+<div class="banner text-center">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <p><span class="title-home">Explore Cities,</span> <span class="title-home-2">Like a Local</span></p>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <p>
+          <span class="title-home">Explore Cities</span>
+          <span class="title-home-2">Like a Local</span>
+        </p>
         <p class="title-home-3">
           Discover authentic experiences guided by passionate locals.
         </p>
@@ -20,6 +23,7 @@
     </div>
   </div>
 </div>
+
 <div id="carouselExample" class="carousel slide mt-5" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -41,41 +45,50 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<div class="container mt-5 custom-section-title">
+<div class="container-fluid mt-5 custom-section-title">
   <h2 class="title-home-4">Explore The World's</h2>
    <h2 class="title-home-4">Most Beautiful Cities</h2>
   <p class="title-home-5">Discover AI-Generated Custom Travel Itineraries</p>
 </div>
-<div class="row g-3 mb-5">
-  <% images = {
-    "Rio de Janeiro" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503994/rio-card_aveyic.png",
-    "Lisbon" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503975/lisbon-card_kjnmat.png",
-    "Paris" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742504016/paris-card_yiis50.png"
-  } %>
-  <% ["Rio de Janeiro", "Lisbon", "Paris"].each do |city| %>
-    <div class="col-12 col-md-4">
-      <div class="card shadow-sm card-hover">
-        <div class="image-container">
-          <%= image_tag images[city], class: "card-img-top" %>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= city %></h5>
-          <%= link_to 'Explore', trip_path(id: "generated", trip: { location: city }), method: :get, class: 'btn btn-explore' %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-<div class="search-section-chat" style="background: url('https://res.cloudinary.com/dslrqpyd7/image/upload/v1742910350/guide_zhzjb8.png') no-repeat center center; background-size: cover; height: 400px;">
-  <div class="search-overlay-chat">
-    <%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get, html: { class: "search-form-chat" } do |f| %>
-      <div class="input-group">
-        <%= f.input :location, placeholder: "Search your destination", label: false, input_html: { class: "form-control form-control-chat", autocomplete: "off" } %>
-        <div class="input-group-append">
-          <%= f.submit "🔍", class: "btn btn-primary" %>
+<div class="container">
+  <div class="row g-4 justify-content-center">
+    <% images = {
+      "Rio de Janeiro" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503994/rio-card_aveyic.png",
+      "Lisbon" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742503975/lisbon-card_kjnmat.png",
+      "Paris" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742504016/paris-card_yiis50.png"
+    } %>
+    <% ["Rio de Janeiro", "Lisbon", "Paris"].each do |city| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm card-hover">
+          <div class="image-container">
+            <%= image_tag images[city], class: "card-img-top" %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= city %></h5>
+            <%= link_to 'Explore', trip_path(id: "generated", trip: { location: city }), method: :get, class: 'btn btn-explore' %>
+          </div>
         </div>
       </div>
     <% end %>
+  </div>
+</div>
+
+<div class="search-section-chat">
+  <div class="search-overlay-chat">
+    <h2 class="search-title">Create your custom travel guide now</h2>
+
+    <%= simple_form_for :trip, url: trip_path(id: "generated"), method: :get, html: { class: "search-form-chat" } do |f| %>
+      <div class="search-form-group">
+        <div class="search-input-wrapper">
+          <%= f.input :location, placeholder: "Search your destination", label: false, input_html: { class: "form-control form-control-chat", autocomplete: "off" } %>
+        </div>
+        <%= f.submit "🔍", class: "btn btn-primary search-btn" %>
+      </div>
+    <% end %>
+
+    <p class="search-description">
+      Get personalized recommendations for restaurants, cafes, attractions, and hidden gems.
+    </p>
   </div>
 </div>
 <div class="banner-vantagens text-center">
@@ -108,25 +121,27 @@
   </div>
  </div>
 
-<div class="row g-3 mb-5">
-  <% images = {
-    "Barcelona" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/panoramic-view-barcelona-multiple-building-s-roofs-view-from-parc-guell-spain-2_wdmv3e.jpg",
-    "Buenos Aires" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/gustavo-sanchez-j1Yx11T0UI0-unsplash-2_ksfffk.jpg",
-    "Milan" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/view-front-milan-cathedral-milan-is-second-most-populous-city-italy-capital-lombardy-2_jedere.jpg"
-  } %>
-  <% ["Barcelona", "Buenos Aires", "Milan"].each do |city| %>
-    <div class="col-12 col-md-4">
-      <div class="card shadow-sm card-hover">
-        <div class="image-container">
-          <%= image_tag images[city], class: "card-img-top" %>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= city %></h5>
-          <%= link_to 'Explore', trip_path(id: "generated", trip: { location: city }), method: :get, class: 'btn btn-explore' %>
+<div class="container">
+  <div class="row g-4 justify-content-center">
+    <% images = {
+      "Barcelona" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/panoramic-view-barcelona-multiple-building-s-roofs-view-from-parc-guell-spain-2_wdmv3e.jpg",
+      "Buenos Aires" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/gustavo-sanchez-j1Yx11T0UI0-unsplash-2_ksfffk.jpg",
+      "Milan" => "https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/view-front-milan-cathedral-milan-is-second-most-populous-city-italy-capital-lombardy-2_jedere.jpg"
+    } %>
+    <% ["Barcelona", "Buenos Aires", "Milan"].each do |city| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm card-hover">
+          <div class="image-container">
+            <%= image_tag images[city], class: "card-img-top" %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= city %></h5>
+            <%= link_to 'Explore', trip_path(id: "generated", trip: { location: city }), method: :get, class: 'btn btn-explore' %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <footer class="footer">
