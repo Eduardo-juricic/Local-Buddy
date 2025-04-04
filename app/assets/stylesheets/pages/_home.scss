@@ -1,162 +1,194 @@
 .banner {
-  padding: 50px 0px;
+  padding: 50px 0;
   background-color: #f4f4f4;
   border-radius: 10px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .title-home {
-    color: #1369CB;
-    font-size: 2rem;
-    font-weight: bold;
-    font-size: 41px;
-    font-family: $headers-font;
+.banner .title-home,
+.banner .title-home-2 {
+  color: #1369CB;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: $headers-font;
+  text-align: center;
+  display: block;
+}
+
+.banner .title-home-2 {
+  color: #003878;
+}
+
+.banner .title-home-3 {
+  color: #1369CB;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+.search-section-chat {
+  background-image: url('https://res.cloudinary.com/dslrqpyd7/image/upload/v1742915758/gustavo-sanchez-j1Yx11T0UI0-unsplash-2_ksfffk.jpg') !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+}
+
+.search-overlay-chat {
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.85)
+}
+
+.search-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.search-form-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  max-width: 400px;
+}
+
+.form-control-chat {
+  height: 50px;
+  font-size: 16px;
+}
+
+.search-btn {
+  height: 50px;
+  padding: 0 20px;
+}
+
+.search-description {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+.search-box {
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+}
+
+.search-box .btn-pesquisa {
+  background-color: #003878;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.search-box .btn-pesquisa:hover {
+  background-color: #00245c;
+}
+
+@media (max-width: 768px) {
+  .banner {
     text-align: center;
-    width: 100%;
-    display: block;
+    padding: 40px 20px;
   }
 
+  .title-home,
   .title-home-2 {
-    color: #003878;
-    font-size: 2rem;
-    font-weight: bold;
-    font-size: 41px;
-    font-family: $headers-font;
-    text-align: center;
-    display: block;
+    font-size: 28px;
   }
 
-  .title-home-3 {
-    color: #1369CB;
-    font-size: 2rem;
-    font-weight: bold;
-    font-size: 18px;
-    text-align: center;
-    display: block;
-  }
-
-  .title-home-4 {
-    color: #003878;
-    font-size: 2rem;
-    font-weight: bold;
-    font-size: 41px;
-    font-family: $headers-font;
-    text-align: center;
-    display: flex;
-    margin: 0;
-  }
-
-  .title-home-5 {
-    color: #1369CB;
-    font-size: 2rem;
-    font-weight: bold;
-    font-size: 18px;
-    text-align: center;
-    display: flex;
-    margin: 0;
-  }
-
-  .search-box  {
-    max-width: 700px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    border-color: #003878;
-    width: 100%;
-    padding: 12px 20px;
-
-    .btn-pesquisa {
-      background-color: #003878;
-      color: $white;
-      padding: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-      border-radius: 20px;
-      justify-content: center;
-
-      &:hover {
-        background-color: darken($light-blue, 10%);
-      }
-    }
+  .search-box {
+    max-width: 100%;
   }
 }
+
+@media (min-width: 769px) {
+  #carouselExample {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #carouselExample {
+    display: block;
+  }
+}
+
 
 .custom-section-title {
   background: linear-gradient(180deg, #2782EB 0%, #AFEBFF 100%);
   padding: 50px 0;
   color: #003878;
   text-align: center;
+  position: relative;
+  top: -50px;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
   transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  .image-container {
-    overflow: hidden;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .card-img-top {
-    width: 100%;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  &:hover .card-img-top {
-    transform: scale(1.1);
-  }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    padding: 20px;
-    color: #f4f4f4;
-    background-color: #f4f4f4;;
-  }
-
-  .card-title {
-    color: #003878;
-    font-size: 1.8rem;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .card-description {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #f4f4f4;
-  }
-
-  .btn-explore {
-    background-color: #003878;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    align-self: stretch;
-    margin-top: auto;
-
-    &:hover {
-      background-color: #7EB9FC;
-    }
+  margin-bottom: 40px;
 }
+
+.card:hover {
+  transform: scale(1.05);
 }
+
+.image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.btn-explore {
+  background-color: #1369CB;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-explore:hover {
+  background-color: #003878;
+}
+
 banner-img {
   max-width: 80%;
   height: auto;
@@ -205,13 +237,13 @@ banner-img {
   background-color: #003878;
   color: #ffffff;
   text-align: center;
-  padding: 60px 20px;
+  padding: 10px 20px;
   margin: 20px;
 
   .banner-title {
     font-family: 'Lilita One', sans-serif;
     font-size: 28px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .card-vantagem {
@@ -223,7 +255,7 @@ banner-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 
   .vantagem-icon {
@@ -235,7 +267,7 @@ banner-img {
     font-family: 'Lilita One', sans-serif;
     font-size: 20px;
     color: #AFEBFF;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   .vantagem-text {
@@ -254,4 +286,14 @@ banner-img {
   .vantagem-text {
     font-size: 18px;
   }
+}
+
+.footer {
+  background: #003878;
+  color: white;
+  padding: 10px 0;
+  font-size: 12px;
+}
+.footer p {
+  margin: 3px 0;
 }
