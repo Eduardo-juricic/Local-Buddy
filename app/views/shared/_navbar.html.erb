@@ -1,49 +1,57 @@
-<div class="navbar navbar-expand-sm navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
+    <!-- Logo à esquerda -->
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "local-buddy-logo.jpg", alt: "Home" %>
     <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Botão hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
+
+    <!-- Conteúdo colapsável -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav align-items-center gap-3">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link home-link" %>
-          </li>
           <li class="nav-item">
-            <div id="navbar-messages">
-              <% if current_user.matches.any? || current_user.profile&.matches&.any? %>
-                <%= link_to "Messages", matches_path, class: "nav-link" %>
-              <% else %>
-                <span class="nav-link">No Messages</span>
-              <% end %>
-            </div>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
+
+          <li class="nav-item">
+            <% if current_user.matches.any? || current_user.profile&.matches&.any? %>
+              <%= link_to "Messages", matches_path, class: "nav-link" %>
+            <% else %>
+              <span class="nav-link">No Messages</span>
+            <% end %>
+          </li>
+
           <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <% if current_user.profile && current_user.profile.photo.attached? %>
-                <%= image_tag current_user.profile.photo, class: "avatar-image", alt: "dropdown menu" %>
+            <a href="#" class="avatar" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <% if current_user.profile&.photo&.attached? %>
+                <%= image_tag current_user.profile.photo, class: "avatar-image", alt: "User avatar" %>
               <% else %>
                 <i class="fa-solid fa-circle-user icon"></i>
               <% end %>
             </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.profile.present? %>
-                <div class="navbar-nav-item-2">
+                <li>
                   <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-                </div>
+                </li>
               <% end %>
-              <div class="navbar-nav-item-2">
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              </div>
-            <% else %>
-              <div class="navbar-nav-item-2">
-                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-              </div>
-            <% end %>
-          </ul>
-        </div>
-      </div>
+              <li>
+                <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
     </div>
+  </div>
+</nav>
