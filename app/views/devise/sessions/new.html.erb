@@ -1,27 +1,36 @@
-<div class="banner text-center text-md-start">
+<div class="banner text-center text-md-start d-flex align-items-center justify-content-center min-vh-100">
   <div class="container">
-    <h1 class="title-profile">Log in</h1>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <h1 class="title-profile text-center text-md-start mb-4">Log in</h1>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email", class: "form-control" } %>
+
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password", class: "form-control" } %>
+
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions mt-3 d-flex justify-content-center">
+            <%= f.button :submit, "Log in", class: "btn btn-principal w-100 w-md-auto" %>
+          </div>
+        <% end %>
+
+        <div class="devise-links mt-3 d-flex justify-content-center">
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-terceiro w-100 w-md-auto mb-2" %>
+        </div>
+
+        <div class="devise-links d-flex justify-content-center">
+          <%= link_to "Don't have an account? Sign up", new_registration_path(resource_name), class: "btn btn-terceiro w-100 w-md-auto" %>
+        </div>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "btn btn-segundo" %>
-      </div>
-    <% end %>
-    <div class="devise-links">
-      <%= button_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-segundo" %>
-    </div>
-    <div class="devise-links">
-      <%= link_to "Don't have an account? Sign up", new_registration_path(resource_name), class: "btn btn-segundo" %>
     </div>
   </div>
-  <%= image_tag "local-buddy-logo.jpg", alt: "Home", class: "logo-image" %>
 </div>

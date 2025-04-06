@@ -1,28 +1,37 @@
-<div class="banner text-center text-md-start">
+<div class="banner text-center text-md-start d-flex align-items-center justify-content-center min-vh-100">
   <div class="container">
-    <h1 class="title-profile">Sign up</h1>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <h1 class="title-profile text-center text-md-start mb-4">Sign up</h1>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email", class: "form-control" } %>
+
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password", class: "form-control" } %>
+
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password", class: "form-control" } %>
+          </div>
+
+          <div class="form-actions mt-3 d-flex justify-content-center">
+            <%= f.button :submit, "Sign up", class: "btn btn-segundo w-100 w-md-auto" %>
+          </div>
+        <% end %>
+
+        <div class="devise-links mt-3 d-flex justify-content-center">
+          <%= link_to "Already have an account? Log in", new_session_path(resource_name), class: "btn btn-terceiro w-100 w-md-auto" %>
+        </div>
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn btn-segundo" %>
-      </div>
-    <% end %>
-    <div class="devise-links">
-      <%= button_to "Already have an account? Log in", new_session_path(resource_name), class: "btn btn-segundo" %>
     </div>
   </div>
-  <%= image_tag "local-buddy-logo.jpg", alt: "Home", class: "logo-image" %>
 </div>
